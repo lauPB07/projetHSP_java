@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="268.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projethsp.pageAdmin.InscriptionController">
+   <children>
+      <Label layoutX="78.0" layoutY="39.0" text="Inscription :">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="120.0" layoutY="106.0" text="Nom :" />
+      <Label layoutX="112.0" layoutY="168.0" text="Prenom :" />
+      <Label layoutX="119.0" layoutY="227.0" text="Email :" />
+      <Label layoutX="97.0" layoutY="293.0" text="Mot de passe :" />
+      <Label layoutX="121.0" layoutY="359.0" text="Role :" />
+      <TextField fx:id="nomField" layoutX="62.0" layoutY="133.0" promptText="Nom " />
+      <TextField fx:id="prenomField" layoutX="62.0" layoutY="193.0" promptText="Prenom" />
+      <TextField fx:id="emailField" layoutX="61.0" layoutY="250.0" promptText="Email" />
+      <PasswordField fx:id="mdpField" layoutX="60.0" layoutY="319.0" promptText="Mot de passe " />
+      <ComboBox fx:id="roleField" layoutX="59.0" layoutY="376.0" prefWidth="150.0" />
+      <Button layoutX="98.0" layoutY="442.0" mnemonicParsing="false" onAction="#inscription" text="Inscription" />
+      <Button layoutX="108.0" layoutY="486.0" mnemonicParsing="false" text="Retour" />
+      <Label fx:id="labelErreur" layoutX="90.0" layoutY="412.0" text="label pour erreur " />
+   </children>
+</Pane>
