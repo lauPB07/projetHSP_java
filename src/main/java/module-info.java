@@ -15,4 +15,6 @@ module com.example.projethsp {
     opens com.example.projethsp.Acceuil to javafx.fxml;
     exports com.example.projethsp.pageAdmin;
     opens com.example.projethsp.pageAdmin to javafx.fxml;
+    exports com.example.projethsp.Entity;
+    opens com.example.projethsp.Entity to javafx.fxml;
 }

@@ -64,6 +64,14 @@ public class Utilisateur {
         this.role = role;
     }
 
+    public Utilisateur(int id, String nom, String prenom, String email, int role) {
+        this.id = id;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.email = email;
+        this.role = role;
+    }
+
     private int role;
 
     @Override

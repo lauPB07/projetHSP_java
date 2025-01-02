@@ -1,7 +1,9 @@
 package com.example.projethsp.Repository;
 
 import com.example.projethsp.BDD.Bdd;
+import com.example.projethsp.Entity.Role;
 import com.example.projethsp.Entity.Utilisateur;
+import com.example.projethsp.Entity.Utilisateurconnecte;
 import com.example.projethsp.HelloApplication;
 import javafx.scene.control.Label;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -10,12 +12,31 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class UtilisateurRepository {
 
     static BCryptPasswordEncoder bcrypt = new BCryptPasswordEncoder();
     static Bdd connexionBdd = new Bdd();
     static Connection connection = connexionBdd.getBdd();
+
+    public ArrayList<Utilisateur> recupererUtilisateur() {
+        ArrayList<Utilisateur> liste = new ArrayList<>();
+        String sql = "SELECT * FROM utilisateur ";
+        try {
+            PreparedStatement requetePrepare = connection.prepareStatement(sql);
+            ResultSet resultatRequette = requetePrepare.executeQuery();
+            while (resultatRequette.next()) {
+                liste.add(new Utilisateur(resultatRequette.getInt("id_utilisateur"),resultatRequette.getString("nom"),resultatRequette.getString("prenom"),resultatRequette.getString("email"),resultatRequette.getString("mdp"),resultatRequette.getInt("ref_role")));
+            }
+
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+
+        }
+        return liste;
+    }
 
     public Utilisateur getUserByEmail(String email){
         Bdd connexionBdd = new Bdd();

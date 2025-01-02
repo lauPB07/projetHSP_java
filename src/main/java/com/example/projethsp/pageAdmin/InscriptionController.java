@@ -1,6 +1,7 @@
 package com.example.projethsp.pageAdmin;
 
 import com.example.projethsp.Entity.Role;
+import com.example.projethsp.HelloApplication;
 import com.example.projethsp.Repository.RoleRepository;
 import com.example.projethsp.Repository.UtilisateurRepository;
 import javafx.event.ActionEvent;
@@ -42,5 +43,10 @@ public class InscriptionController implements Initializable {
         UtilisateurRepository utilisateurRepository = new UtilisateurRepository();
         utilisateurRepository.inscription(nomField.getText(),prenomField.getText(),emailField.getText(),mdpField.getText(),roleField.getValue().getId(),labelErreur);
 
+    }
+
+    @FXML
+    public void retour(ActionEvent event){
+        HelloApplication.changeScene("pageAdmin/utilisateurView","Tableau utilisateur");
     }
 }

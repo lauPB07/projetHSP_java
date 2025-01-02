@@ -26,7 +26,7 @@
       <PasswordField fx:id="mdpField" layoutX="60.0" layoutY="319.0" promptText="Mot de passe " />
       <ComboBox fx:id="roleField" layoutX="59.0" layoutY="376.0" prefWidth="150.0" />
       <Button layoutX="98.0" layoutY="442.0" mnemonicParsing="false" onAction="#inscription" text="Inscription" />
-      <Button layoutX="108.0" layoutY="486.0" mnemonicParsing="false" text="Retour" />
+      <Button layoutX="108.0" layoutY="486.0" mnemonicParsing="false" onAction="#retour" text="Retour" />
       <Label fx:id="labelErreur" layoutX="90.0" layoutY="412.0" text="label pour erreur " />
    </children>
 </Pane>
