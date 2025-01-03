@@ -2,6 +2,7 @@ package com.example.projethsp.pageSecretaire;
 
 import com.example.projethsp.Entity.Patient;
 import com.example.projethsp.Entity.Utilisateur;
+import com.example.projethsp.Entity.Utilisateurconnecte;
 import com.example.projethsp.HelloApplication;
 import com.example.projethsp.Repository.PatientRepository;
 import javafx.event.ActionEvent;
@@ -47,6 +48,16 @@ public class AcceuilController implements Initializable {
 
     @FXML
     public void inscption(ActionEvent event){
-        HelloApplication.changeScene("pageSecretaire/incriptionView","Inscritpion Patient");
+        HelloApplication.changeScene("pageSecretaire/inscriptionView","Inscritpion Patient");
+    }
+
+    @FXML
+    public void deconnexion(ActionEvent event){
+        if (Utilisateurconnecte.clearInstance()) {
+            System.out.println("Session terminée.");
+            HelloApplication.changeScene("Acceuil/loginView", "Connexion");
+        } else {
+            System.out.println("Aucune session active à terminer.");
+        }
     }
 }

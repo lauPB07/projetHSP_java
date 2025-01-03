@@ -1,5 +1,6 @@
 package com.example.projethsp.pageSecretaire;
 
+import com.example.projethsp.HelloApplication;
 import com.example.projethsp.Repository.PatientRepository;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -39,5 +40,10 @@ public class AjoutPatientController {
     @FXML
     public void inscription(ActionEvent event){
         patientRepository.inscription(nomField.getText(),prenomField.getText(),emailField.getText(),telField.getText(),rueField.getText(),cpField.getText(),villeField.getText(),numSecuField.getText(),labelErreur);
+    }
+
+    @FXML
+    public void retour(ActionEvent event){
+        HelloApplication.changeScene("pageSecretaire/acceuilView","Acceuil");
     }
 }

@@ -16,6 +16,7 @@
       <Button layoutX="19.0" layoutY="167.0" mnemonicParsing="false" onAction="#inscption" text="Ajout patients" />
       <Button layoutX="20.0" layoutY="214.0" mnemonicParsing="false" text="Fiche Patients" />
       <Button layoutX="16.0" layoutY="259.0" mnemonicParsing="false" text="Prise en charge" />
-      <TableView layoutX="222.0" layoutY="79.0" prefHeight="374.0" prefWidth="482.0" />
+      <TableView fx:id="tableauPatient" layoutX="222.0" layoutY="79.0" prefHeight="374.0" prefWidth="482.0" />
+      <Button layoutX="14.0" layoutY="302.0" mnemonicParsing="false" onAction="#deconnexion" text="Deconnexion" />
    </children>
 </Pane>

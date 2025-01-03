@@ -37,6 +37,8 @@ public class LoginController {
                 System.out.println(role);
                 if (isInitialized && role==6) {
                     HelloApplication.changeScene("pageAdmin/menuView","Menu");
+                } else if (isInitialized && role==3) {
+                    HelloApplication.changeScene("pageSecretaire/acceuilView","Menu");
                 } else {
                     labelErreur.setText("Une session est déjà active.");
                 }
@@ -44,4 +46,5 @@ public class LoginController {
 
         }
     }
+
 }

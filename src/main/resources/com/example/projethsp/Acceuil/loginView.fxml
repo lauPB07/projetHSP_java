@@ -28,6 +28,6 @@
       <PasswordField fx:id="mdpField" layoutX="56.0" layoutY="265.0" promptText="Mot de passe" />
       <Button layoutX="93.0" layoutY="345.0" mnemonicParsing="false" onAction="#connexion" text="Connexion" />
       <Button layoutX="67.0" layoutY="388.0" mnemonicParsing="false" text="Mot de passe oublier" />
-      <Label layoutX="98.0" layoutY="309.0" text="Label Erreur" textFill="#dc1111" />
+      <Label fx:id="labelErreur" layoutX="98.0" layoutY="309.0" text="Label Erreur" textFill="#dc1111" />
    </children>
 </Pane>

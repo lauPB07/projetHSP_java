@@ -1,10 +1,13 @@
 package com.example.projethsp.pageAdmin;
 
+import com.example.projethsp.Entity.Utilisateurconnecte;
 import com.example.projethsp.HelloApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
 public class MenuController {
+
+    private Utilisateurconnecte UtilisateurConnecte;
 
     @FXML
     public void user(ActionEvent event){
@@ -13,6 +16,11 @@ public class MenuController {
 
     @FXML
     public void deconnexion(ActionEvent event){
-        HelloApplication.changeScene("Acceuil/loginView","Projet HSP");
+        if (Utilisateurconnecte.clearInstance()) {
+            HelloApplication.changeScene("acceuil/loginView", "Connexion");
+        } else {
+            System.out.println("Aucune session active à fermer.");
+        }
+
     }
 }

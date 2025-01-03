@@ -52,7 +52,7 @@ public class UtilisateurRepository {
                 String prenom = resultatRequette.getString(3);
                 String email1 = resultatRequette.getString(4);
                 String mdP = resultatRequette.getString(5);
-                int role = resultatRequette.getInt(6);
+                int role = resultatRequette.getInt(11);
                 return new Utilisateur(id,nom, prenom,email1,mdP,role);
             }
 
