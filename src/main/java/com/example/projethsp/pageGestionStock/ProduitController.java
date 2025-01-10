@@ -57,4 +57,9 @@ public class ProduitController implements Initializable {
     public void retour(ActionEvent event){
         HelloApplication.changeScene("pageGestionStock/menuView","Menu");
     }
+
+    @FXML
+    public void ajoutProduit(ActionEvent event){
+        HelloApplication.changeScene("pageGestionStock/ajoutProduitView", "Ajout de produit");
+    }
 }

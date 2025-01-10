@@ -3,6 +3,7 @@ package com.example.projethsp.Repository;
 import com.example.projethsp.BDD.Bdd;
 import com.example.projethsp.Entity.FicheProduit;
 import com.example.projethsp.Entity.Utilisateur;
+import javafx.scene.control.Label;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -30,5 +31,29 @@ public class ProduitRepository {
 
         }
         return liste;
+    }
+
+
+    public void ajoutProduit(String libelle, String description, float prix, int nb,int niv, int fournisseur,int user, Label label){
+
+            String sql1 = "INSERT INTO  ficheproduit (libelle,description,prix,nbStocker,ref_niv,ref_fournisseur,ref_user) VALUES (?,?,?,?,?,?,?) ";
+
+            try {
+                PreparedStatement requete = connection.prepareStatement(sql1);
+                requete.setString(1,libelle);
+                requete.setString(2,description);
+                requete.setFloat(3,prix);
+                requete.setInt(4,nb);
+                requete.setInt(5,niv);
+                requete.setInt(6,fournisseur);
+                requete.setInt(7,user);
+                requete.executeUpdate();
+                label.setText("Nouveau produit enregistrer !");
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+
+
+
     }
 }
