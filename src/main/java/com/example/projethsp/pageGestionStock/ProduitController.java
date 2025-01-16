@@ -87,7 +87,7 @@ public class ProduitController implements Initializable {
                 alert.setHeaderText("Êtes-vous sûr de vouloir supprimer la liste ?");
                 Optional<ButtonType> result = alert.showAndWait();
                 if (result.isPresent() && result.get() == ButtonType.OK) {
-                    //listeRepo.deleteListe(id,labelErreur);
+                    produitRepository.supprimerProduit(id,labelErreur);
                     supprimerButton.setVisible(false);
                 }else {
                     labelErreur.setText("Supression annulée");

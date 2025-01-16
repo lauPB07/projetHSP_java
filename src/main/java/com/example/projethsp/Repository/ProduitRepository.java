@@ -79,4 +79,21 @@ public class ProduitRepository {
 
 
     }
+
+
+    public void supprimerProduit(int id, Label label){
+
+        String sql = "DELETE FROM ficheproduit WHERE id_ficheProduit = ?";
+
+        try {
+            PreparedStatement requete = connection.prepareStatement(sql);
+            requete.setInt(1,id);
+            requete.executeUpdate();
+            label.setText("Le produit a bien été suprimer");
+        } catch (Exception e) {
+            label.setText("erreur");
+            throw new RuntimeException(e);
+        }
+
+    }
 }

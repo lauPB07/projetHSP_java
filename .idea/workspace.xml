@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f9ebbc6f-9e1e-4f79-acfe-6ff704ebc164" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/pageGestionStock/ModifierProduitController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/projethsp/pageGestionStock/editerProduitView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/ProduitRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/ProduitRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/pageGestionStock/ProduitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/pageGestionStock/ProduitController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projethsp/pageGestionStock/produitView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projethsp/pageGestionStock/produitView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +101,8 @@
       <workItem from="1736515906235" duration="3000" />
       <workItem from="1736522022762" duration="599000" />
       <workItem from="1736759945648" duration="6197000" />
-      <workItem from="1736862266000" duration="329000" />
+      <workItem from="1736862266000" duration="2158000" />
+      <workItem from="1736864444612" duration="17000" />
     </task>
     <servers />
   </component>
