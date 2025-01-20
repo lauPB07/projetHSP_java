@@ -56,4 +56,44 @@ public class ProduitRepository {
 
 
     }
+
+    public void modifierProduit(int id, String libelle, String description, float prix, int nb,int niv, int fournisseur, Label label){
+
+        String sql = "UPDATE ficheproduit SET libelle=?,description=?,prix=?,nbStocker=?,ref_niv=?,ref_fournisseur= ? WHERE id_ficheProduit = ?";
+
+        try {
+            PreparedStatement requete = connection.prepareStatement(sql);
+            requete.setString(1,libelle);
+            requete.setString(2,description);
+            requete.setFloat(3,prix);
+            requete.setInt(4,nb);
+            requete.setInt(5,niv);
+            requete.setInt(6,fournisseur);
+            requete.setInt(7,id);
+            requete.executeUpdate();
+            label.setText("Le produit a bien été modifier");
+        } catch (SQLException e) {
+            label.setText("erreur");
+            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public void supprimerProduit(int id, Label label){
+
+        String sql = "DELETE FROM ficheproduit WHERE id_ficheProduit = ?";
+
+        try {
+            PreparedStatement requete = connection.prepareStatement(sql);
+            requete.setInt(1,id);
+            requete.executeUpdate();
+            label.setText("Le produit a bien été suprimer");
+        } catch (Exception e) {
+            label.setText("erreur");
+            throw new RuntimeException(e);
+        }
+
+    }
 }
