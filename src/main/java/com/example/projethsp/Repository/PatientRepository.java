@@ -80,6 +80,29 @@ public class PatientRepository {
             }
         }
 
+    }
+
+    public void editerPatient (String nom, String prenom, String email,String telephone, String rue, String cp, String ville , String numSecu, Label label) {
+
+        Bdd bdd = new Bdd();
+
+        String sql1 = "UPDATE utilisateur SET nom = ?,prenom = ? ,email = ?,telephone = ?,rue = ?,cp = ?,ville = ?,numSecu = ?,ref_role = ? WHERE id_utilisateur = ?";
+
+        try {
+            PreparedStatement requete = connection.prepareStatement(sql1);
+            requete.setString(1,nom);
+            requete.setString(2,prenom);
+            requete.setString(3,email);
+            requete.setString(4,telephone);
+            requete.setString(5,rue);
+            requete.setString(6,cp);
+            requete.setString(7,ville);
+            requete.setString(8,numSecu);
+            requete.executeUpdate();
+            label.setText("Patient modifié !");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 
