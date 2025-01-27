@@ -12,7 +12,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Button layoutX="239.0" layoutY="109.0" mnemonicParsing="false" text="Gerer les demandes" />
+      <Button layoutX="239.0" layoutY="109.0" mnemonicParsing="false" onAction="#gererDemande" text="Gerer les demandes" />
       <Button layoutX="256.0" layoutY="174.0" mnemonicParsing="false" onAction="#produit" text="Fiche produit" />
       <Button layoutX="257.0" layoutY="233.0" mnemonicParsing="false" text="Commandes" />
       <Button layoutX="257.0" layoutY="298.0" mnemonicParsing="false" onAction="#deconnexion" text="Deconnexion" />

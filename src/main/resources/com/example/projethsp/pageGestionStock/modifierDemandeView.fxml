@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="390.0" prefWidth="385.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="86.0" layoutY="32.0" text="Validation de la demande :">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <CheckBox fx:id="isValidate" layoutX="139.0" layoutY="150.0" mnemonicParsing="false" text="Je valide ">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </CheckBox>
+      <Button layoutX="167.0" layoutY="252.0" mnemonicParsing="false" text="Valider" />
+      <Button layoutX="166.0" layoutY="303.0" mnemonicParsing="false" text="Retour" />
+      <Label fx:id="labelErreur" layoutX="147.0" layoutY="217.0" text="Label pour erreur" />
+   </children>
+</Pane>
