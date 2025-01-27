@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9ebbc6f-9e1e-4f79-acfe-6ff704ebc164" name="Changes" comment="reglage probleme de merge">
-      <change beforePath="$PROJECT_DIR$/.idea.gitigniore/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea.gitigniore/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea.gitigniore/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea.gitigniore/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea.gitigniore/vcs.xml" beforeDir="false" />
-    </list>
+    <list default="true" id="f9ebbc6f-9e1e-4f79-acfe-6ff704ebc164" name="Changes" comment="reglage probleme de merge" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
