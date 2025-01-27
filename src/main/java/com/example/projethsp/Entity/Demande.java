@@ -5,10 +5,9 @@ public class Demande {
     private String description;
     private String ref_user;
 
-    public Demande(int id, String description, String ref_user) {
+    public Demande(int id, String description) {
         this.id = id;
         this.description = description;
-        this.ref_user = ref_user;
     }
 
     public int getId() {

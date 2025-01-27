@@ -18,13 +18,13 @@ public class DemandeRepository {
 
     public ArrayList<Demande> select(){
         ArrayList<Demande> liste = new ArrayList<>();
-        String sql = "SELECT * FROM demande WHERE ref_user = ?";
+        String sql = "SELECT * FROM demande WHERE ref_userDemandeur = ?";
         try {
             PreparedStatement requetePrepare = connection.prepareStatement(sql);
             requetePrepare.setInt(1, Utilisateurconnecte.getInstance().getId());
             ResultSet resultatRequette = requetePrepare.executeQuery();
             while (resultatRequette.next()) {
-                liste.add(new Demande(resultatRequette.getInt("id_utilisateur"),resultatRequette.getString("description"),resultatRequette.getString("ref_userDemande")));
+                liste.add(new Demande(resultatRequette.getInt("id_demande"),resultatRequette.getString("description")));
             }
 
 

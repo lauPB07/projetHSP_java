@@ -40,8 +40,7 @@ public class MesDemandeController implements Initializable {
                 TablePosition cell = liste.getSelectionModel().getSelectedCells().get(0);
                 int indexLigne = cell.getRow();
                 int id = liste.getItems().get(indexLigne).getId();
-
-                HelloApplication.changeScene("liste/editerlisteView",new ProduitDemandeController(id));
+                HelloApplication.changeScene("pageMedecin/produitDemandeView",new ProduitDemandeController(id));
             } else if (event.getClickCount() == 1) {
                 TablePosition cell = liste.getSelectionModel().getSelectedCells().get(0);
                 int indexLigne = cell.getRow();
