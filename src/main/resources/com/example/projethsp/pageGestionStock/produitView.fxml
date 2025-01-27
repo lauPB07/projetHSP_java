@@ -13,11 +13,11 @@
             <Font size="25.0" />
          </font>
       </Label>
-      <TableView fx:id="produitTable" layoutX="188.0" layoutY="71.0" onMouseClicked="#onListeSelection" prefHeight="310.0" prefWidth="599.0" />
+      <TableView fx:id="produitTable" layoutX="188.0" layoutY="71.0" prefHeight="310.0" prefWidth="599.0" />
       <Button layoutX="41.0" layoutY="123.0" mnemonicParsing="false" onAction="#ajoutProduit" text="Ajouter un produit" />
       <Button layoutX="71.0" layoutY="207.0" mnemonicParsing="false" onAction="#retour" text="Retour" />
-      <Button fx:id="supprimerButton" layoutX="60.0" layoutY="251.0" mnemonicParsing="false" text="Supprimer" />
+      <Button fx:id="modifierButton" layoutX="67.0" layoutY="250.0" mnemonicParsing="false" text="Modifier" />
+      <Button fx:id="supprimerButton" layoutX="62.0" layoutY="289.0" mnemonicParsing="false" text="Supprimer" />
       <Button layoutX="58.0" layoutY="165.0" mnemonicParsing="false" text="Fournisseur" />
-      <Label fx:id="labelErreur" layoutX="51.0" layoutY="301.0" text="Label pour erreur " />
    </children>
 </Pane>

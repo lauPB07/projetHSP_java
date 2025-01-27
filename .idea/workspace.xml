@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9ebbc6f-9e1e-4f79-acfe-6ff704ebc164" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Entity/DemandeStock.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/DemandeStockRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/pageGestionStock/DemandeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/pageGestionStock/ModifierDemandeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/projethsp/pageGestionStock/demandeView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/projethsp/pageGestionStock/modifierDemandeView.fxml" afterDir="false" />
+    <list default="true" id="f9ebbc6f-9e1e-4f79-acfe-6ff704ebc164" name="Changes" comment="feat(EditerPatientController):ajout des methode et du skeleton de la page editerPatientVeiw">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/projethsp/pageSecretaire/editerPatientView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/pageGestionStock/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/pageGestionStock/MenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projethsp/pageGestionStock/menuView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projethsp/pageGestionStock/menuView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/PatientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/PatientRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +19,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -47,16 +43,20 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/projetJava/projet_HSP&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/magne/IdeaProjects/projetHSP_java/src/main/resources/com/example/projethsp/pageSecretaire&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\magne\IdeaProjects\projetHSP_java\src\main\resources\com\example\projethsp\pageSecretaire" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\projetJava\projetHSP\src\main\resources\com\example\projethsp\acceuil" />
       <recent name="C:\projetJava\projetHSP\src\main\resources\com\example\projethsp\Acceuil" />
@@ -104,22 +104,36 @@
       <workItem from="1735905178334" duration="50000" />
       <workItem from="1735923815554" duration="1203000" />
       <workItem from="1736167151431" duration="11115000" />
-      <workItem from="1736512656958" duration="3224000" />
-      <workItem from="1736515906235" duration="3000" />
-      <workItem from="1736522022762" duration="599000" />
-      <workItem from="1736759945648" duration="6197000" />
-      <workItem from="1736862266000" duration="2158000" />
-      <workItem from="1736864444612" duration="17000" />
-      <workItem from="1737036512754" duration="954000" />
-      <workItem from="1737109264417" duration="3345000" />
-      <workItem from="1737119929613" duration="1236000" />
-      <workItem from="1737376953189" duration="6081000" />
-      <workItem from="1737727524895" duration="4047000" />
-      <workItem from="1737981483735" duration="4227000" />
+      <workItem from="1736512656958" duration="307000" />
+      <workItem from="1736775356613" duration="3002000" />
+      <workItem from="1736862648834" duration="1806000" />
+      <workItem from="1737376816977" duration="1696000" />
     </task>
+    <task id="LOCAL-00001" summary="feat(AcceuilController):creation de la methode onListeSelection">
+      <option name="closed" value="true" />
+      <created>1737378278780</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1737378278781</updated>
+    </task>
+    <task id="LOCAL-00002" summary="feat(EditerPatientController):ajout des methode et du skeleton de la page editerPatientVeiw">
+      <option name="closed" value="true" />
+      <created>1737378394745</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1737378394745</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat(AcceuilController):creation de la methode onListeSelection" />
+    <MESSAGE value="feat(EditerPatientController):ajout des methode et du skeleton de la page editerPatientVeiw" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(EditerPatientController):ajout des methode et du skeleton de la page editerPatientVeiw" />
   </component>
 </project>
