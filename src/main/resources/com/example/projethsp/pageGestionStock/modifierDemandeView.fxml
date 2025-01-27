@@ -19,8 +19,8 @@
             <Font size="18.0" />
          </font>
       </CheckBox>
-      <Button layoutX="167.0" layoutY="252.0" mnemonicParsing="false" text="Valider" />
-      <Button layoutX="166.0" layoutY="303.0" mnemonicParsing="false" text="Retour" />
+      <Button fx:id="validerButon" layoutX="167.0" layoutY="252.0" mnemonicParsing="false" text="Valider" />
+      <Button fx:id="retourButon" layoutX="166.0" layoutY="303.0" mnemonicParsing="false" text="Retour" />
       <Label fx:id="labelErreur" layoutX="147.0" layoutY="217.0" text="Label pour erreur" />
    </children>
 </Pane>

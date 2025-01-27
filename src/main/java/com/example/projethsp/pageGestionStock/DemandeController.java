@@ -61,12 +61,13 @@ public class DemandeController implements Initializable {
             TablePosition cell = demandeTable.getSelectionModel().getSelectedCells().get(0);
             int indexLigne = cell.getRow();
             TableColumn colone = cell.getTableColumn();
-            DemandeStock demade = demandeTable.getItems().get(indexLigne);
-            System.out.println("Simple-click ligne "+indexLigne+" colonne "+colone.getText()+ " : "+demade);
+            DemandeStock demande = demandeTable.getItems().get(indexLigne);
+            System.out.println("Simple-click ligne "+indexLigne+" colonne "+colone.getText()+ " : "+demande);
             validerButon.setVisible(true);
-            int id = demade.getId();
+            int id = demande.getId();
             validerButon.setOnAction(event1 -> {
-                //HelloApplication.changeScene("pageGestionStock/editerProduitView",new ModifierProduitController(demande));
+                HelloApplication.changeScene("pageGestionStock/editerProduitView",new ModifierDemandeController(demande));
+                validerButon.setVisible(false);
             });
 
 

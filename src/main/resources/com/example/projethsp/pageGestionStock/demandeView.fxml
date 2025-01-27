@@ -8,7 +8,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="473.0" prefWidth="756.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projethsp.pageGestionStock.DemandeController">
    <children>
-      <TableView fx:id="demandeTable" layoutX="208.0" layoutY="78.0" prefHeight="340.0" prefWidth="502.0" />
+      <TableView fx:id="demandeTable" layoutX="208.0" layoutY="78.0" onMouseClicked="#onListeSelection" prefHeight="340.0" prefWidth="502.0" />
       <Label layoutX="31.0" layoutY="38.0" text="Gérer les demandes :  ">
          <font>
             <Font size="18.0" />
