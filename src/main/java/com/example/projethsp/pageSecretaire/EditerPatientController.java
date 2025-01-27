@@ -5,63 +5,73 @@ import com.example.projethsp.HelloApplication;
 import com.example.projethsp.Repository.PatientRepository;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-public class EditerPatientController {
+import javafx.scene.control.Button;
+
+
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class EditerPatientController implements Initializable    {
 
     private Patient patient;
 
+    public EditerPatientController(Patient patient) {
 
-
-    public class AjoutPatientController {
-
-        @FXML
-        private TextField cpField;
-
-        @FXML
-        private TextField emailField;
-
-        @FXML
-        private Label labelErreur;
-
-        @FXML
-        private TextField nomField;
-
-        @FXML
-        private TextField numSecuField;
-
-        @FXML
-        private TextField prenomField;
-
-        @FXML
-        private TextField rueField;
-
-        @FXML
-        private TextField telField;
-
-        @FXML
-        private TextField villeField;
-
-        PatientRepository patientRepository = new PatientRepository();
-
-        @FXML
-        void editer(ActionEvent event) {
-            patientRepository.inscription(nomField.getText(),prenomField.getText(),emailField.getText(),telField.getText(),rueField.getText(),cpField.getText(),villeField.getText(),numSecuField.getText(),labelErreur);
-
-        }
-
-        @FXML
-        public void retour(ActionEvent event){
-            HelloApplication.changeScene("pageSecretaire/acceuilView","Acceuil");
-        }
+        this.patient = patient;
 
     }
 
-    public EditerPatientController (Patient patient){
+    @FXML
+    private TextField cpField;
+    @FXML
+    private TextField emailField;
+    @FXML
+    private Label labelErreur;
+    @FXML
+    private TextField nomField;
+    @FXML
+    private TextField numSecuField;
+    @FXML
+    private TextField prenomField;
+    @FXML
+    private TextField rueField;
+    @FXML
+    private TextField telField;
+    @FXML
+    private TextField villeField;
+    @FXML
+    private Button editer;
+    @FXML
+    private Button retour;
+    @FXML
+    void retour(ActionEvent event) {
+        HelloApplication.changeScene("pageSecretaire/acceuilView", "Acceuil");
+    }
+    PatientRepository patientRepository = new PatientRepository();
+    @FXML
+    void editer(ActionEvent event) {
+        patientRepository.editerPatient(nomField.getText(), prenomField.getText(), emailField.getText(), telField.getText(), rueField.getText(), cpField.getText(), villeField.getText(), numSecuField.getText(), patient.getId(), labelErreur);
+    }
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        nomField.setText(patient.getNom());
+        prenomField.setText(patient.getPrenom());
+        emailField.setText(patient.getEmail());
+        telField.setText(patient.getTelephone());
+        villeField.setText(patient.getVille());
+        rueField.setText(patient.getRue());
+        cpField.setText(patient.getCp());
+        numSecuField.setText(patient.getNumSecu());
+        retour.setOnAction(event -> {
+            retour(event);
+        } );
+        editer.setOnAction(event -> {
+            editer(event);
+        } );
+    }
 
-    this.patient = patient;
-
-}
+    }
 
 
-}
