@@ -39,6 +39,8 @@ public class LoginController {
                     HelloApplication.changeScene("pageAdmin/menuView","Menu");
                 } else if (isInitialized && role==3) {
                     HelloApplication.changeScene("pageSecretaire/acceuilView","Menu");
+                } else if (isInitialized && role == 5 ) {
+                    HelloApplication.changeScene("pageGestionStock/menuView","Menu");
                 } else if (isInitialized && role==4) {
                     HelloApplication.changeScene("pageMedecin/mesDemandeView","Menu");
                 } else {
