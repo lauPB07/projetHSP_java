@@ -20,4 +20,9 @@ public class MenuController {
             System.out.println("Aucune session active à fermer.");
         }
     }
+
+    @FXML
+    public void gererDemande(ActionEvent event){
+        HelloApplication.changeScene("pageGestionStock/demandeView","Gérer les demandes");
+    }
 }
