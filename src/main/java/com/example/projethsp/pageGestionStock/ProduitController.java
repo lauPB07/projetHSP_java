@@ -63,6 +63,11 @@ public class ProduitController implements Initializable {
         HelloApplication.changeScene("pageGestionStock/ajoutProduitView", "Ajout de produit");
     }
 
+    @FXML
+    public void fournisseur(ActionEvent event){
+        HelloApplication.changeScene("pageGestionStock/fournisseurView", "Fournisseur");
+    }
+
 
     @FXML
     void onListeSelection(MouseEvent event){
