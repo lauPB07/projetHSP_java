@@ -14,7 +14,7 @@
          </font>
       </Label>
       <TableView fx:id="fournisseurTable" layoutX="238.0" layoutY="98.0" onMouseClicked="#onListeSelection" prefHeight="334.0" prefWidth="467.0" />
-      <Button layoutX="39.0" layoutY="146.0" mnemonicParsing="false" text="Ajouter un fournisseur" />
+      <Button layoutX="39.0" layoutY="146.0" mnemonicParsing="false" onAction="#ajoutFournisseur" text="Ajouter un fournisseur" />
       <Button layoutX="80.0" layoutY="196.0" mnemonicParsing="false" onAction="#retour" text="Retour" />
       <Button fx:id="supprimerButton" layoutX="30.0" layoutY="251.0" mnemonicParsing="false" text="Supprimer un fournisseur" />
       <Label fx:id="erreurLabel" layoutX="59.0" layoutY="358.0" text="Label pour erreur" />

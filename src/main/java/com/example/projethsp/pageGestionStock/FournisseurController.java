@@ -30,6 +30,8 @@ public class FournisseurController implements Initializable {
     @FXML
     private Button supprimerButton;
 
+    private FournisseurRepository repository = new FournisseurRepository();
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         String [][] colonnes = {
@@ -58,7 +60,7 @@ public class FournisseurController implements Initializable {
             TableColumn colone = cell.getTableColumn();
             Fournisseur fournisseur = fournisseurTable.getItems().get(indexLigne);
             System.out.println("Double-clique ligne "+indexLigne+" , colone  "+colone.getText()+ " : "+ fournisseur);
-            //HelloApplication.changeScene("pageGestionStock/editerProduitView",new ModifierProduitController(produitsel));
+            HelloApplication.changeScene("pageGestionStock/modificationFournisseurView",new ModifierFournisseurController(fournisseur));
         } else if (event.getButton() == MouseButton.PRIMARY && event.getClickCount() ==1) {
             TablePosition cell = fournisseurTable.getSelectionModel().getSelectedCells().get(0);
             int indexLigne = cell.getRow();
@@ -73,10 +75,10 @@ public class FournisseurController implements Initializable {
                 alert.setHeaderText("Êtes-vous sûr de vouloir supprimer la liste ?");
                 Optional<ButtonType> result = alert.showAndWait();
                 if (result.isPresent() && result.get() == ButtonType.OK) {
-                    //produitRepository.supprimerProduit(id,labelErreur);
+                    repository.supprimerFournisseur(id,erreurLabel);
                     supprimerButton.setVisible(false);
                 }else {
-                    //labelErreur.setText("Supression annulée");
+                    erreurLabel.setText("Supression annulée");
                     supprimerButton.setVisible(false);
                 }
             });
@@ -88,5 +90,10 @@ public class FournisseurController implements Initializable {
     @FXML
     void retour(ActionEvent event){
         HelloApplication.changeScene("pageGestionStock/produitView","Produits");
+    }
+
+    @FXML
+    void ajoutFournisseur(ActionEvent event){
+        HelloApplication.changeScene("pageGestionStock/ajoutFournisseurView","Ajouter un fournisseur");
     }
 }
