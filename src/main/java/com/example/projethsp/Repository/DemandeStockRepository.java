@@ -22,7 +22,7 @@ public class DemandeStockRepository {
             PreparedStatement requetePrepare = connection.prepareStatement(sql);
             ResultSet resultatRequette = requetePrepare.executeQuery();
             while (resultatRequette.next()) {
-                liste.add(new DemandeStock(resultatRequette.getInt("id_demande"),resultatRequette.getInt("id_ficheProduit"),resultatRequette.getString("description"),resultatRequette.getString("nom"),resultatRequette.getString("prenom"),resultatRequette.getString("libelle"),resultatRequette.getInt("nb"),resultatRequette.getBoolean("valider")));
+                liste.add(new DemandeStock(resultatRequette.getInt("id_demande"),resultatRequette.getInt("id_ficheProduit"),resultatRequette.getString("description"),resultatRequette.getString("nom"),resultatRequette.getString("prenom"),resultatRequette.getString("libelle"),resultatRequette.getInt("nb"),resultatRequette.getBoolean("valider"),resultatRequette.getInt("nbStocker")));
             }
 
 
@@ -46,7 +46,7 @@ public class DemandeStockRepository {
             throw new RuntimeException(e);
         }
 
-        String sql2 = "UPDATE ficheproduit SET nbStocker = nbStoker - ? WHERE id_ficheProduit = ?";
+        String sql2 = "UPDATE ficheproduit SET nbStocker = nbStocker - ? WHERE id_ficheProduit = ?";
         try{
             PreparedStatement requetePrepare = connection.prepareStatement(sql2);
             requetePrepare.setInt(1,nbDemander);
