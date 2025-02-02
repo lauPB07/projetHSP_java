@@ -24,7 +24,7 @@ public class DemandeRepository {
             requetePrepare.setInt(1, Utilisateurconnecte.getInstance().getId());
             ResultSet resultatRequette = requetePrepare.executeQuery();
             while (resultatRequette.next()) {
-                liste.add(new Demande(resultatRequette.getInt("id_demande"),resultatRequette.getString("description")));
+                liste.add(new Demande(resultatRequette.getInt("id_demande"),resultatRequette.getString("titre"),resultatRequette.getString("description"),resultatRequette.getBoolean("valider"),resultatRequette.getInt("ref_userDemandeur")));
             }
 
 
@@ -33,5 +33,20 @@ public class DemandeRepository {
 
         }
         return liste;
+    }
+    public void ajouter(Demande demande){
+        String sql = "INSERT INTO demande (titre,description,valider,ref_userDemandeur) VALUES (?,?,?,?)";
+        try {
+            PreparedStatement requetePrepare = connection.prepareStatement(sql);
+            requetePrepare.setString(1,demande.getTitre());
+            requetePrepare.setString(2, demande.getDescription());
+            requetePrepare.setBoolean(3, false);
+            requetePrepare.setInt(4, Utilisateurconnecte.getInstance().getId());
+            requetePrepare.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+
+        }
+
     }
 }
