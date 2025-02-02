@@ -5,36 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f9ebbc6f-9e1e-4f79-acfe-6ff704ebc164" name="Changes" comment="reglage probleme de merge">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Entity/DemandeStock.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Entity/FicheProduit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Entity/Fournisseur.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Entity/Niveau.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/DemandeStockRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/FournisseurRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/NiveauRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/ProduitRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/pageGestionStock/AjoutProduit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/pageGestionStock/DemandeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/pageGestionStock/MenuController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/pageGestionStock/ModifierDemandeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/pageGestionStock/ModifierProduitController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/pageGestionStock/ProduitController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/pageSecretaire/EditerPatientController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/projethsp/pageGestionStock/ajoutProduitView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/projethsp/pageGestionStock/demandeView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/projethsp/pageGestionStock/editerProduitView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/projethsp/pageGestionStock/menuView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/projethsp/pageGestionStock/modifierDemandeView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/projethsp/pageGestionStock/produitView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/projethsp/pageSecretaire/editerPatientView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Acceuil/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Acceuil/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/PatientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/PatientRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/pageSecretaire/AcceuilController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/pageSecretaire/AcceuilController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projethsp/pageSecretaire/acceuilView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projethsp/pageSecretaire/acceuilView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Entity/FicheProduit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Entity/FicheProduit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/DemandeProduitRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/DemandeProduitRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/ProduitRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/ProduitRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/pageMedecin/AjouterProduitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/pageMedecin/AjouterProduitController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/pageMedecin/ProduitDemandeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/pageMedecin/ProduitDemandeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projethsp/pageMedecin/ajouterProduitView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projethsp/pageMedecin/ajouterProduitView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projethsp/pageMedecin/produitDemandeView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projethsp/pageMedecin/produitDemandeView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,12 +41,15 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.HelloApplication.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Merging main",
-    "last_opened_file_path": "C:/Users/magne/IdeaProjects/projetHSP_java/src/main/resources/com/example/projethsp/pageSecretaire",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_directory_selection": "C:/Users/djibr/Cour/projetHSP_java/src/main/java/com/example/projethsp/pageMedecin",
+    "last_opened_file_path": "C:/Users/djibr/Cour/projetHSP_java/src/main/resources/com/example/projethsp/pageMedecin",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -80,6 +61,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\djibr\Cour\projetHSP_java\src\main\resources\com\example\projethsp\pageMedecin" />
       <recent name="C:\Users\magne\IdeaProjects\projetHSP_java\src\main\resources\com\example\projethsp\pageSecretaire" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -141,6 +123,8 @@
       <workItem from="1736775356613" duration="3002000" />
       <workItem from="1736862648834" duration="1806000" />
       <workItem from="1737376816977" duration="1696000" />
+      <workItem from="1738055079358" duration="1292000" />
+      <workItem from="1738430556505" duration="20052000" />
     </task>
     <task id="LOCAL-00001" summary="feat(AcceuilController):creation de la methode onListeSelection">
       <option name="closed" value="true" />
@@ -158,7 +142,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737378394745</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="reglage probleme de merge">
+      <option name="closed" value="true" />
+      <created>1737994237354</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1737994237354</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

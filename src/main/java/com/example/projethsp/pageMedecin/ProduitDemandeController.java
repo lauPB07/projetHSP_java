@@ -28,6 +28,9 @@ public class ProduitDemandeController implements Initializable {
     private Button retour;
 
     @FXML
+    private Button ajouter;
+
+    @FXML
     private Text titre;
 
     private int id;
@@ -45,7 +48,8 @@ public class ProduitDemandeController implements Initializable {
     }
 
     @FXML
-    void onClickList(MouseEvent event) {
+    void onClickAjouter(ActionEvent event) {
+        HelloApplication.changeScene("pageMedecin/ajouterProduitView",new AjouterProduitController(this.id));
     }
 
     @Override

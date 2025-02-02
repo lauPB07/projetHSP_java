@@ -2,7 +2,6 @@ package com.example.projethsp.Repository;
 
 import com.example.projethsp.BDD.Bdd;
 import com.example.projethsp.Entity.FicheProduit;
-import com.example.projethsp.Entity.Utilisateur;
 import javafx.scene.control.Label;
 
 import java.sql.Connection;
@@ -32,7 +31,6 @@ public class ProduitRepository {
         }
         return liste;
     }
-
 
     public void ajoutProduit(String libelle, String description, float prix, int nb,int niv, int fournisseur,int user, Label label){
 
@@ -95,5 +93,23 @@ public class ProduitRepository {
             throw new RuntimeException(e);
         }
 
+    }
+
+    public ArrayList<FicheProduit> selectProduit() {
+        ArrayList<FicheProduit> liste = new ArrayList<>();
+        String sql = "SELECT id_ficheProduit,libelle,nbStocker FROM ficheproduit ";
+        try {
+            PreparedStatement requetePrepare = connection.prepareStatement(sql);
+            ResultSet resultatRequette = requetePrepare.executeQuery();
+            while (resultatRequette.next()) {
+                liste.add(new FicheProduit(resultatRequette.getInt("id_ficheProduit"),resultatRequette.getString("libelle"),resultatRequette.getInt("nbStocker")));
+            }
+
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+
+        }
+        return liste;
     }
 }
