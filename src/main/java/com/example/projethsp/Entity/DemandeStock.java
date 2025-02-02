@@ -75,7 +75,7 @@ public class DemandeStock {
         isValidate = validate;
     }
 
-    public DemandeStock(int id,int idProduit, String description, String nom, String prenom, String libelle, int nb, boolean isValidate) {
+    public DemandeStock(int id,int idProduit, String description, String nom, String prenom, String libelle, int nb, boolean isValidate,int nbStocker) {
         this.id = id;
         this.idProduit = idProduit;
         this.description = description;
@@ -84,9 +84,20 @@ public class DemandeStock {
         this.libelle = libelle;
         this.nb = nb;
         this.isValidate = isValidate;
+        this.nbStocker = nbStocker;
     }
 
     private boolean isValidate ;
+
+    public int getNbStocker() {
+        return nbStocker;
+    }
+
+    public void setNbStocker(int nbStocker) {
+        this.nbStocker = nbStocker;
+    }
+
+    private int nbStocker;
 
 
 }

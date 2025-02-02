@@ -3,6 +3,7 @@ package com.example.projethsp.Repository;
 import com.example.projethsp.BDD.Bdd;
 import com.example.projethsp.Entity.Patient;
 import com.example.projethsp.Entity.Utilisateur;
+import com.example.projethsp.Entity.Utilisateurconnecte;
 import com.example.projethsp.HelloApplication;
 import javafx.scene.control.Label;
 
@@ -65,7 +66,7 @@ public class PatientRepository {
             String sql1 = "INSERT INTO utilisateur (nom,prenom,email,telephone,rue,cp,ville,numSecu,ref_role) VALUES (?,?,?,?,?,?,?,?,7) ";
 
             try {
-                PreparedStatement requete = connection.prepareStatement(sql1);
+                PreparedStatement requete = connection.prepareStatement(sql1,PreparedStatement.RETURN_GENERATED_KEYS);
                 requete.setString(1, nom);
                 requete.setString(2, prenom);
                 requete.setString(3, email);
@@ -74,16 +75,32 @@ public class PatientRepository {
                 requete.setString(6, cp);
                 requete.setString(7, ville);
                 requete.setString(8, numSecu);
-                requete.executeUpdate();
-                label.setText("Nouveaux patient enregistrer !");
-                HelloApplication.changeScene("pageSecretaire/acceuilView", "Acceuil");
+
+               if (requete.executeUpdate() == 1){
+
+                   ResultSet resultSet = requete.getGeneratedKeys();
+                   if (resultSet.next()){
+                       int id_patient = resultSet.getInt(1);
+
+                       String sql2 = "INSERT INTO fiche_patient (ref_userPatient,ref_userCreer) VALUES (?,?)";
+
+                       requete = connection.prepareStatement(sql2);
+
+                       requete.setInt(1,id_patient);
+                       requete.setInt(2, Utilisateurconnecte.getInstance().getId());
+
+                       requete.executeUpdate();
+
+                       label.setText("Nouveaux patient enregistrer !");
+                       HelloApplication.changeScene("pageSecretaire/acceuilView", "Acceuil");
+
+                   }
+               }
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
         }
-
     }
-
     public void editerPatient(String nom, String prenom, String email, String telephone, String rue, String cp, String ville, String numSecu,int id, Label label) {
 
         Bdd bdd = new Bdd();
