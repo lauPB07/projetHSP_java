@@ -47,5 +47,15 @@ public class DemandeProduitRepository {
 
         }
 
+        String sql1 = "INSERT INTO `historiqueaction`(`ref_user`, `action`, `date`, `heure`) VALUES (?,'Ajout DemandeProduit',DATE( NOW() ),TIME(NOW()))";
+
+        try {
+            PreparedStatement requete = connection.prepareStatement(sql1);
+            requete.setInt(1,Utilisateurconnecte.getInstance().getId());
+            requete.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 }

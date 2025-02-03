@@ -3,6 +3,7 @@ package com.example.projethsp.Repository;
 import com.example.projethsp.BDD.Bdd;
 import com.example.projethsp.Entity.Fournisseur;
 import com.example.projethsp.Entity.Utilisateur;
+import com.example.projethsp.Entity.Utilisateurconnecte;
 import javafx.scene.control.Label;
 
 import java.sql.Connection;
@@ -48,6 +49,16 @@ public class FournisseurRepository {
             throw new RuntimeException(e);
 
         }
+
+        String sql1 = "INSERT INTO `historiqueaction`(`ref_user`, `action`, `date`, `heure`) VALUES (?,'Modification Fournisseur',DATE( NOW() ),TIME(NOW()))";
+
+        try {
+            PreparedStatement requete = connection.prepareStatement(sql1);
+            requete.setInt(1,Utilisateurconnecte.getInstance().getId());
+            requete.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void supprimerFournisseur(int id, Label label){
@@ -62,6 +73,16 @@ public class FournisseurRepository {
             label.setText("erreur");
             throw new RuntimeException(e);
         }
+
+        String sql1 = "INSERT INTO `historiqueaction`(`ref_user`, `action`, `date`, `heure`) VALUES (?,'Suppression Fournisseur',DATE( NOW() ),TIME(NOW()))";
+
+        try {
+            PreparedStatement requete = connection.prepareStatement(sql1);
+            requete.setInt(1,Utilisateurconnecte.getInstance().getId());
+            requete.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 
@@ -74,6 +95,16 @@ public class FournisseurRepository {
             requete.executeUpdate();
             label.setText("Nouveau fournisseur ajouté");
         } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+        String sql1 = "INSERT INTO `historiqueaction`(`ref_user`, `action`, `date`, `heure`) VALUES (?,'Ajout Fournisseur',DATE( NOW() ),TIME(NOW()))";
+
+        try {
+            PreparedStatement requete = connection.prepareStatement(sql1);
+            requete.setInt(1, Utilisateurconnecte.getInstance().getId());
+            requete.executeUpdate();
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }

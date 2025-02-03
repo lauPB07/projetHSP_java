@@ -99,6 +99,16 @@ public class PatientRepository {
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
+
+            String sql = "INSERT INTO `historiqueaction`(`ref_user`, `action`, `date`, `heure`) VALUES (?,'Ajout Patient',DATE( NOW() ),TIME(NOW()))";
+
+            try {
+                PreparedStatement requete = connection.prepareStatement(sql);
+                requete.setInt(1,Utilisateurconnecte.getInstance().getId());
+                requete.executeUpdate();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
     public void editerPatient(String nom, String prenom, String email, String telephone, String rue, String cp, String ville, String numSecu,int id, Label label) {
@@ -124,6 +134,16 @@ public class PatientRepository {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+
+        String sql = "INSERT INTO `historiqueaction`(`ref_user`, `action`, `date`, `heure`) VALUES (?,'Modification Patient',DATE( NOW() ),TIME(NOW()))";
+
+        try {
+            PreparedStatement requete = connection.prepareStatement(sql);
+            requete.setInt(1,Utilisateurconnecte.getInstance().getId());
+            requete.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
     public void supprimerPatient(int id, Label label) {
 
@@ -136,6 +156,16 @@ public class PatientRepository {
             label.setText("L'utilisateur a bien été supprimer");
         } catch (SQLException e) {
             label.setText("erreur");
+            throw new RuntimeException(e);
+        }
+
+        String sql1 = "INSERT INTO `historiqueaction`(`ref_user`, `action`, `date`, `heure`) VALUES (?,'Suppression Patient',DATE( NOW() ),TIME(NOW()))";
+
+        try {
+            PreparedStatement requete = connection.prepareStatement(sql1);
+            requete.setInt(1,Utilisateurconnecte.getInstance().getId());
+            requete.executeUpdate();
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }

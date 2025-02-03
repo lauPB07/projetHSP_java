@@ -2,6 +2,7 @@ package com.example.projethsp.Repository;
 
 import com.example.projethsp.BDD.Bdd;
 import com.example.projethsp.Entity.DemandeStock;
+import com.example.projethsp.Entity.Utilisateurconnecte;
 import javafx.scene.control.Label;
 
 import java.sql.Connection;
@@ -54,6 +55,16 @@ public class DemandeStockRepository {
             requetePrepare.executeUpdate();
             label.setText("La demande à été valider");
         } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+        String sql1 = "INSERT INTO `historiqueaction`(`ref_user`, `action`, `date`, `heure`) VALUES (?,'Modification Demande',DATE( NOW() ),TIME(NOW()))";
+
+        try {
+            PreparedStatement requete = connection.prepareStatement(sql1);
+            requete.setInt(1, Utilisateurconnecte.getInstance().getId());
+            requete.executeUpdate();
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
