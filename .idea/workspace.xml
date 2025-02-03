@@ -6,10 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f9ebbc6f-9e1e-4f79-acfe-6ff704ebc164" name="Changes" comment="reglage probleme de merge">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Entity/DemandeStock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Entity/DemandeStock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/DemandeStockRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/DemandeStockRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/pageGestionStock/ModifierDemandeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/pageGestionStock/ModifierDemandeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projethsp/pageGestionStock/modifierDemandeView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projethsp/pageGestionStock/modifierDemandeView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +116,8 @@
       <workItem from="1738073820106" duration="191000" />
       <workItem from="1738160779444" duration="1698000" />
       <workItem from="1738230720184" duration="6311000" />
-      <workItem from="1738311516204" duration="12285000" />
+      <workItem from="1738311516204" duration="14304000" />
+      <workItem from="1738586194962" duration="1152000" />
     </task>
     <task id="LOCAL-00001" summary="feat(AcceuilController):creation de la methode onListeSelection">
       <option name="closed" value="true" />
