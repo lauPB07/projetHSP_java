@@ -71,6 +71,13 @@ public class Utilisateur {
         this.email = email;
         this.role = role;
     }
+    public Utilisateur(int id, String nom, String prenom, String email) {
+        this.id = id;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.email = email;
+        this.role = role;
+    }
 
     private int role;
 

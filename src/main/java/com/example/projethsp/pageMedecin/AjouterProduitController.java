@@ -9,7 +9,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 
@@ -46,10 +45,17 @@ public class AjouterProduitController implements Initializable {
     void onClickValider(ActionEvent event) {
         int idProduit = produit.getSelectionModel().getSelectedItem().getId();
         int nb = Integer.parseInt(this.nb.getText());
-        DemandeProduit demandeProduit = new DemandeProduit(id,idProduit,nb,false);
-        DemandeProduitRepository repo = new DemandeProduitRepository();
-        repo.ajouter(demandeProduit);
-        HelloApplication.changeScene("pageMedecin/mesDemandeView","Vos demandes");
+        if (nb%1==0){
+            DemandeProduit demandeProduit = new DemandeProduit(id,idProduit,nb,false);
+            System.out.println(id);
+            DemandeProduitRepository repo = new DemandeProduitRepository();
+            System.out.println(demandeProduit.toString());
+            repo.ajouter(demandeProduit);
+            HelloApplication.changeScene("pageMedecin/mesDemandeView","Vos demandes");
+        }else {
+            HelloApplication.changeScene("pageMedecin/ajouterProduitView",new AjouterProduitController(id));
+        }
+
     }
 
     @Override

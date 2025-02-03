@@ -22,7 +22,7 @@ public class DemandeProduitRepository {
             requetePrepare.setInt(1, id);
             ResultSet resultatRequette = requetePrepare.executeQuery();
             while (resultatRequette.next()) {
-                liste.add(new DemandeProduit(resultatRequette.getInt("d.ref_demande"),resultatRequette.getInt("p.libelle"),resultatRequette.getInt("d.nb"),resultatRequette.getBoolean("d.valider")));
+                liste.add(new DemandeProduit(resultatRequette.getInt("d.ref_demande"),resultatRequette.getInt("d.ref_produit"),resultatRequette.getInt("d.nb"),resultatRequette.getBoolean("d.valider"),resultatRequette.getString("p.libelle")));
             }
 
 
@@ -34,7 +34,7 @@ public class DemandeProduitRepository {
 
     }
     public void ajouter(DemandeProduit demandeProduit) {
-        String sql = "INSERT INTO demande (ref_demande,ref_produit,nb,valider) VALUES (?,?,?,?)";
+        String sql = "INSERT INTO demandeproduit (ref_demande,ref_produit,nb,valider) VALUES (?,?,?,?)";
         try {
             PreparedStatement requetePrepare = connection.prepareStatement(sql);
             requetePrepare.setInt(1,demandeProduit.getRef_demande());

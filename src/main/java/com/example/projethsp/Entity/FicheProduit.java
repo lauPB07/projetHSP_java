@@ -97,4 +97,11 @@ public class FicheProduit {
     }
 
     private int user;
+
+    @Override
+    public String toString() {
+        return "id=" + id +
+                ", libelle='" + libelle + '\'' +
+                ", nbStocker=" + nbStocker;
+    }
 }

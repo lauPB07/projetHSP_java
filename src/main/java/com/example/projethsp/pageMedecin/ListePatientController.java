@@ -1,6 +1,8 @@
 package com.example.projethsp.pageMedecin;
 
 import com.example.projethsp.Entity.FichePatient;
+import com.example.projethsp.Entity.Utilisateur;
+import com.example.projethsp.HelloApplication;
 import com.example.projethsp.Repository.FichePatientRepository;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -23,7 +25,7 @@ public class ListePatientController implements Initializable {
     private Button hospitalisation;
 
     @FXML
-    private TableView<FichePatient> liste;
+    private TableView<Utilisateur> liste;
 
     @FXML
     private Button ordonnance;
@@ -33,7 +35,7 @@ public class ListePatientController implements Initializable {
 
     @FXML
     void OnClickRetour(ActionEvent event) {
-
+        HelloApplication.changeScene("pageMedecin/menuView","Menu");
     }
 
     @FXML
@@ -57,17 +59,17 @@ public class ListePatientController implements Initializable {
         this.ordonnance.setVisible(false);
         String [][] colonnes = {
                 {"ID","id"},
-                {"Titre","titre"},
-                {"Description", "description"},
-                {"Valider","valider"}
+                {"Nom","nom"},
+                {"Prenom", "prenom"},
+                {"Email","email"}
 
         };
         for (int i = 0; i <colonnes.length; i++){
-            TableColumn<FichePatient,String> maColonne = new TableColumn<>(colonnes[i][0]);
+            TableColumn<Utilisateur,String> maColonne = new TableColumn<>(colonnes[i][0]);
             maColonne.setCellValueFactory(new PropertyValueFactory<>(colonnes[i][1]));
             liste.getColumns().add(maColonne);
         }
-        ArrayList<FichePatient> list = fichePatient.selectPatient();
+        ArrayList<Utilisateur> list = fichePatient.selectPatient();
         liste.getItems().addAll(list);
 
     }
