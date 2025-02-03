@@ -3,6 +3,7 @@ package com.example.projethsp.Repository;
 import com.example.projethsp.BDD.Bdd;
 import com.example.projethsp.Entity.Fournisseur;
 import com.example.projethsp.Entity.Utilisateur;
+import javafx.scene.control.Label;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -31,6 +32,50 @@ public class FournisseurRepository {
 
         }
         return liste;
+    }
+
+    public void modifierFournisseur(int id, String nom, Label label){
+        String sql = "UPDATE fournisseur SET nom = ? WHERE id_fournisseur = ?";
+
+        try {
+            PreparedStatement requetePrepare = connection.prepareStatement(sql);
+            requetePrepare.setString(1,nom);
+            requetePrepare.setInt(2,id);
+            requetePrepare.executeUpdate();
+            label.setText("Le fournisseur a bien été modifier");
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+
+        }
+    }
+
+    public void supprimerFournisseur(int id, Label label){
+        String sql = "DELETE FROM fournisseur WHERE id_fournisseur = ? ";
+
+        try {
+            PreparedStatement requete = connection.prepareStatement(sql);
+            requete.setInt(1, id);
+            requete.executeUpdate();
+            label.setText("Le fournisseur a bien été supprimer");
+        } catch (SQLException e) {
+            label.setText("erreur");
+            throw new RuntimeException(e);
+        }
+    }
+
+
+    public void ajouterFournisseur(String nom, Label label){
+        String sql = "INSERT INTO fournisseur (nom) VALUE (?)";
+
+        try{
+            PreparedStatement requete = connection.prepareStatement(sql);
+            requete.setString(1,nom);
+            requete.executeUpdate();
+            label.setText("Nouveau fournisseur ajouté");
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }

@@ -66,7 +66,7 @@ public class DemandeController implements Initializable {
             validerButon.setVisible(true);
             int id = demande.getId();
             validerButon.setOnAction(event1 -> {
-                HelloApplication.changeScene("pageGestionStock/editerProduitView",new ModifierDemandeController(demande));
+                HelloApplication.changeScene("pageGestionStock/modifierDemandeView",new ModifierDemandeController(demande));
                 validerButon.setVisible(false);
             });
 

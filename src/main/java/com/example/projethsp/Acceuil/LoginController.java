@@ -42,7 +42,7 @@ public class LoginController {
                 } else if (isInitialized && role == 5 ) {
                     HelloApplication.changeScene("pageGestionStock/menuView","Menu");
                 } else if (isInitialized && role==4) {
-                    HelloApplication.changeScene("pageMedecin/mesDemandeView","Menu");
+                    HelloApplication.changeScene("pageMedecin/menuView","Menu");
                 } else {
                     labelErreur.setText("Une session est déjà active.");
                 }
