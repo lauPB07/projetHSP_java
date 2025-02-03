@@ -53,7 +53,9 @@ public class MesDemandeController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         String [][] colonnes = {
                 {"ID","id"},
+                {"Titre","titre"},
                 {"Description", "description"},
+                {"Valider","valider"}
 
         };
         for (int i = 0; i <colonnes.length; i++){

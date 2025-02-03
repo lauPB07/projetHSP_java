@@ -33,4 +33,19 @@ public class DemandeProduitRepository {
         return liste;
 
     }
+    public void ajouter(DemandeProduit demandeProduit) {
+        String sql = "INSERT INTO demande (ref_demande,ref_produit,nb,valider) VALUES (?,?,?,?)";
+        try {
+            PreparedStatement requetePrepare = connection.prepareStatement(sql);
+            requetePrepare.setInt(1,demandeProduit.getRef_demande());
+            requetePrepare.setInt(2, demandeProduit.getRef_produit());
+            requetePrepare.setBoolean(4, false);
+            requetePrepare.setInt(3, demandeProduit.getNb_produit());
+            requetePrepare.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+
+        }
+
+    }
 }

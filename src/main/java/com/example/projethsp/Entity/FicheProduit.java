@@ -90,5 +90,11 @@ public class FicheProduit {
         this.user = user;
     }
 
+    public FicheProduit(int id, String libelle, int nbStocker) {
+        this.id = id;
+        this.libelle = libelle;
+        this.nbStocker = nbStocker;
+    }
+
     private int user;
 }
