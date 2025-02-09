@@ -14,16 +14,18 @@ public class FichePatientRepository {
     static Connection connection = connexionBdd.getBdd();
     public ArrayList<Utilisateur> selectPatient() {
         ArrayList<Utilisateur> liste = new ArrayList<>();
-        String sql = "SELECT ref_userPatient FROM fiche_patient ";
+        String sql = "SELECT ref_userPatient FROM fiche_patient WHERE valider = 0";
         String sql2 = "SELECT * FROM utilisateur WHERE id_utilisateur = ?";
         try {
             PreparedStatement requetePrepare1 = connection.prepareStatement(sql);
             ResultSet resultatRequette1 = requetePrepare1.executeQuery();
             while (resultatRequette1.next()) {
                 PreparedStatement requetePrepare = connection.prepareStatement(sql2);
-                requetePrepare.setInt(1, resultatRequette1.getInt("id_utilisateur"));
+                requetePrepare.setInt(1, resultatRequette1.getInt(1));
                 ResultSet resultatRequette = requetePrepare.executeQuery();
-                liste.add(new Utilisateur(resultatRequette.getInt(1),resultatRequette.getString(2),resultatRequette.getString(3),resultatRequette.getString(4)));
+                if (resultatRequette.next()) {
+                    liste.add(new Utilisateur(resultatRequette.getInt(1),resultatRequette.getString(2),resultatRequette.getString(3),resultatRequette.getString(4)));
+                }
             }
 
 

@@ -5,19 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f9ebbc6f-9e1e-4f79-acfe-6ff704ebc164" name="Changes" comment="feat(PatientRepository):ajout en base de donnÃ©e dans la table fiche_patient de la ref_userPatient et ref_userCreer apres creation d'un user">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Entity/Ordonnance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/OrdonnanceRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/pageMedecin/ModifierProduitController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/pageMedecin/NewOrdonnanceController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/projethsp/pageMedecin/modifierProduitView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/projethsp/pageMedecin/newOrdonnanceView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Entity/DemandeProduit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Entity/DemandeProduit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Entity/FicheProduit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Entity/FicheProduit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Entity/FichePatient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Entity/FichePatient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Entity/Utilisateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Entity/Utilisateur.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/DemandeProduitRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/DemandeProduitRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/FichePatientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/FichePatientRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/pageMedecin/AjouterProduitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/pageMedecin/AjouterProduitController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/pageMedecin/ListePatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/pageMedecin/ListePatientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/pageMedecin/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/pageMedecin/MenuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/pageMedecin/MesDemandeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/pageMedecin/MesDemandeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projethsp/pageMedecin/menuView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projethsp/pageMedecin/menuView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/pageMedecin/ProduitDemandeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/pageMedecin/ProduitDemandeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projethsp/pageMedecin/ajouterProduitView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projethsp/pageMedecin/ajouterProduitView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projethsp/pageMedecin/produitDemandeView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projethsp/pageMedecin/produitDemandeView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,24 +49,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.HelloApplication.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/magne/IdeaProjects/projetHSP_java/src/main/resources/com/example/projethsp/pageSecretaire",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/djibr/Cour/projetHSP_java/src/main/java/com/example/projethsp/pageMedecin&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/magne/IdeaProjects/projetHSP_java/src/main/resources/com/example/projethsp/pageSecretaire&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\magne\IdeaProjects\projetHSP_java\src\main\resources\com\example\projethsp\pageSecretaire" />
@@ -126,6 +133,10 @@
       <workItem from="1736862648834" duration="1806000" />
       <workItem from="1737376816977" duration="1696000" />
       <workItem from="1738073728702" duration="507000" />
+      <workItem from="1738702428744" duration="1526000" />
+      <workItem from="1738933543567" duration="24000" />
+      <workItem from="1738962087381" duration="711000" />
+      <workItem from="1739101458009" duration="6403000" />
     </task>
     <task id="LOCAL-00001" summary="feat(AcceuilController):creation de la methode onListeSelection">
       <option name="closed" value="true" />

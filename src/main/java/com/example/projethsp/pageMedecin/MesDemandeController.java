@@ -46,7 +46,6 @@ public class MesDemandeController implements Initializable {
                 int indexLigne = cell.getRow();
             }
         }
-
     }
 
     @Override
