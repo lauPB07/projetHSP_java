@@ -2,6 +2,7 @@ package com.example.projethsp.Repository;
 
 import com.example.projethsp.BDD.Bdd;
 import com.example.projethsp.Entity.FicheProduit;
+import com.example.projethsp.Entity.Utilisateurconnecte;
 import javafx.scene.control.Label;
 
 import java.sql.Connection;
@@ -51,6 +52,16 @@ public class ProduitRepository {
                 throw new RuntimeException(e);
             }
 
+        String sql = "INSERT INTO `historiqueaction`(`ref_user`, `action`, `date`, `heure`) VALUES (?,'Ajout Produit',DATE( NOW() ),TIME(NOW()))";
+
+        try {
+            PreparedStatement requete = connection.prepareStatement(sql);
+            requete.setInt(1, Utilisateurconnecte.getInstance().getId());
+            requete.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
 
 
     }
@@ -75,6 +86,16 @@ public class ProduitRepository {
             throw new RuntimeException(e);
         }
 
+        String sql1 = "INSERT INTO `historiqueaction`(`ref_user`, `action`, `date`, `heure`) VALUES (?,'Modifier Produit',DATE( NOW() ),TIME(NOW()))";
+
+        try {
+            PreparedStatement requete = connection.prepareStatement(sql1);
+            requete.setInt(1,Utilisateurconnecte.getInstance().getId());
+            requete.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
 
     }
 
@@ -90,6 +111,16 @@ public class ProduitRepository {
             label.setText("Le produit a bien été suprimer");
         } catch (Exception e) {
             label.setText("erreur");
+            throw new RuntimeException(e);
+        }
+
+        String sql1 = "INSERT INTO `historiqueaction`(`ref_user`, `action`, `date`, `heure`) VALUES (?,'Suppression Produit',DATE( NOW() ),TIME(NOW()))";
+
+        try {
+            PreparedStatement requete = connection.prepareStatement(sql1);
+            requete.setInt(1,Utilisateurconnecte.getInstance().getId());
+            requete.executeUpdate();
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
 

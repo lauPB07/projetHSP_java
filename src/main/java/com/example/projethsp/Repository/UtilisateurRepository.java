@@ -75,6 +75,14 @@ public class UtilisateurRepository {
             System.out.println(user.getMdp());
             System.out.println(bcrypt.matches(mdp,user.getMdp()));
             if (bcrypt.matches(mdp,user.getMdp())){
+                String sql = "INSERT INTO `historiqueconnexion`( `ref_user`, `date`, `heure`) VALUES (?,DATE( NOW() ),TIME(NOW()))";
+                try {
+                    PreparedStatement requete = connection.prepareStatement(sql);
+                    requete.setInt(1,user.getId());
+                    requete.executeUpdate();
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
                 return user;
             } else {
                 label.setText("Mot de passe incorrect");
@@ -98,6 +106,15 @@ public class UtilisateurRepository {
                 requete.setInt(5,role);
                 requete.executeUpdate();
                 label.setText("Nouvelle utilisateur enregistrer !");
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+            String sql = "INSERT INTO `historiqueaction`(`ref_user`, `action`, `date`, `heure`) VALUES (?,'Ajout utilisateur',DATE( NOW() ),TIME(NOW()))";
+
+            try {
+                PreparedStatement requete = connection.prepareStatement(sql);
+                requete.setInt(1,Utilisateurconnecte.getInstance().getId());
+                requete.executeUpdate();
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
