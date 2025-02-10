@@ -26,6 +26,11 @@ public class MesDemandeController implements Initializable {
     @FXML
     private Button retour;
 
+    @FXML
+    private Button suprimer;
+
+    private int idDemande;
+
     DemandeRepository demandeRepository = new DemandeRepository();
 
     @FXML
@@ -44,12 +49,16 @@ public class MesDemandeController implements Initializable {
             } else if (event.getClickCount() == 1) {
                 TablePosition cell = liste.getSelectionModel().getSelectedCells().get(0);
                 int indexLigne = cell.getRow();
+                int id = liste.getItems().get(indexLigne).getId();
+                idDemande = id;
+                this.suprimer.setVisible(true);
             }
         }
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        this.suprimer.setVisible(false);
         String [][] colonnes = {
                 {"ID","id"},
                 {"Titre","titre"},
@@ -65,5 +74,10 @@ public class MesDemandeController implements Initializable {
 
         ArrayList<Demande> list = demandeRepository.select();
         liste.getItems().addAll(list);
+    }
+
+    public void onClickSuprimer(ActionEvent actionEvent) {
+        demandeRepository.suprimer(this.idDemande);
+        HelloApplication.changeScene("pageMedecin/mesDemandeView","Mes Demande");
     }
 }

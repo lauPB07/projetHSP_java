@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane fx:id="date" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projethsp.pageMedecin.NewHospitalisationView">
+   <children>
+      <DatePicker layoutX="25.0" layoutY="92.0" promptText="Date Hospitalisation" />
+   </children>
+</AnchorPane>

@@ -47,6 +47,20 @@ public class DemandeRepository {
             throw new RuntimeException(e);
 
         }
+    }
+    public void suprimer(int id){
+        String sql = "DELETE FROM demandeproduit WHERE ref_demande = ?";
+        String sql1 = "DELETE FROM demande WHERE id_demande = ?";
+        try {
+            PreparedStatement requetePrepare = connection.prepareStatement(sql);
+            requetePrepare.setInt(1,id);
+            requetePrepare.executeUpdate();
+            requetePrepare = connection.prepareStatement(sql1);
+            requetePrepare.setInt(1,id);
+            requetePrepare.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
 
+        }
     }
 }

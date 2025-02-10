@@ -25,7 +25,7 @@ public class DemandeStockController {
 
     @FXML
     void OnActionRetour(ActionEvent event) {
-
+        HelloApplication.changeScene("pageMedecin/menuView","Menu");
     }
 
     @FXML
