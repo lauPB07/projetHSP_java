@@ -4,10 +4,16 @@ import com.example.projethsp.HelloApplication;
 import com.example.projethsp.Repository.PatientRepository;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TextFormatter;
+import java.util.function.UnaryOperator;
+import javafx.util.converter.IntegerStringConverter;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class AjoutPatientController {
+public class AjoutPatientController implements Initializable {
     @FXML
     private TextField cpField;
 
@@ -46,4 +52,19 @@ public class AjoutPatientController {
     public void retour(ActionEvent event){
         HelloApplication.changeScene("pageSecretaire/acceuilView","Acceuil");
     }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        UnaryOperator<TextFormatter.Change> filter = change -> {
+            String newText = change.getControlNewText();
+            if (newText.matches("\\d*")) {
+                return change;
+            }
+            return null;
+        };
+
+        TextFormatter<Integer> textFormatter = new TextFormatter<>(new IntegerStringConverter(), null, filter);
+        telField.setTextFormatter(textFormatter);
+    }
 }
+
