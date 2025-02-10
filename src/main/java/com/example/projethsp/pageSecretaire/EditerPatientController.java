@@ -9,6 +9,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextFormatter;
+import java.util.function.UnaryOperator;
+import javafx.util.converter.IntegerStringConverter;
 
 
 import java.net.URL;
@@ -59,7 +62,6 @@ public class EditerPatientController implements Initializable    {
         nomField.setText(patient.getNom());
         prenomField.setText(patient.getPrenom());
         emailField.setText(patient.getEmail());
-        telField.setText(patient.getTelephone());
         villeField.setText(patient.getVille());
         rueField.setText(patient.getRue());
         cpField.setText(patient.getCp());
@@ -70,8 +72,17 @@ public class EditerPatientController implements Initializable    {
         editer.setOnAction(event -> {
             editer(event);
         } );
-    }
+        UnaryOperator<TextFormatter.Change> filter = change -> {
+            String newText = change.getControlNewText();
+            if (newText.matches("\\d*")) {
+                return change;
+            }
+            return null;
+        };
 
+        TextFormatter<Integer> textFormatter = new TextFormatter<>(new IntegerStringConverter(), Integer.parseInt(patient.getTelephone()), filter);
+        telField.setTextFormatter(textFormatter);
     }
+}
 
 
