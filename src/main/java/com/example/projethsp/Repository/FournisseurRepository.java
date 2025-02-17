@@ -49,8 +49,7 @@ public class FournisseurRepository {
             throw new RuntimeException(e);
 
         }
-
-        String sql1 = "INSERT INTO `historiqueaction`(`ref_user`, `action`, `date`, `heure`) VALUES (?,'Modification Fournisseur',DATE( NOW() ),TIME(NOW()))";
+        String sql1 = "INSERT INTO `historiqueaction`(`ref_user`, `action`, `date`, `heure`) VALUES (?,'Modification fournisseur',DATE( NOW() ),TIME(NOW()))";
 
         try {
             PreparedStatement requete = connection.prepareStatement(sql1);
@@ -73,8 +72,7 @@ public class FournisseurRepository {
             label.setText("erreur");
             throw new RuntimeException(e);
         }
-
-        String sql1 = "INSERT INTO `historiqueaction`(`ref_user`, `action`, `date`, `heure`) VALUES (?,'Suppression Fournisseur',DATE( NOW() ),TIME(NOW()))";
+        String sql1 = "INSERT INTO `historiqueaction`(`ref_user`, `action`, `date`, `heure`) VALUES (?,'Supprimer Fournisseur',DATE( NOW() ),TIME(NOW()))";
 
         try {
             PreparedStatement requete = connection.prepareStatement(sql1);
@@ -108,5 +106,6 @@ public class FournisseurRepository {
             throw new RuntimeException(e);
         }
     }
+
 
 }

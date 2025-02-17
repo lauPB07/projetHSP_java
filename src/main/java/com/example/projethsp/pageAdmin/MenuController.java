@@ -15,6 +15,11 @@ public class MenuController {
     }
 
     @FXML
+    public void historiqueCo(ActionEvent event){
+        HelloApplication.changeScene("pageAdmin/historiqueCoView","Historique de connexion");
+    }
+
+    @FXML
     public void deconnexion(ActionEvent event){
         if (Utilisateurconnecte.clearInstance()) {
             HelloApplication.changeScene("acceuil/loginView", "Connexion");
