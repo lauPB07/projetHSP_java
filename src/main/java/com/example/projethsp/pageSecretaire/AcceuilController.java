@@ -26,6 +26,9 @@ public class AcceuilController implements Initializable {
     PatientRepository patientRepository = new PatientRepository();
 
     @FXML
+    private Button priseEnCharge;
+
+    @FXML
     private Button supprimer;
 
     @FXML
@@ -58,6 +61,7 @@ public class AcceuilController implements Initializable {
         tableauPatient.getItems().addAll(list);
 
         supprimer.setVisible(false);
+        priseEnCharge.setVisible(false);
     }
 
     @FXML
@@ -67,6 +71,10 @@ public class AcceuilController implements Initializable {
 
     @FXML
     void supprimer(ActionEvent event) {
+
+    }
+    @FXML
+    void priseEnCharge(ActionEvent event) {
 
     }
 
@@ -96,7 +104,11 @@ public class AcceuilController implements Initializable {
             Patient patient = tableauPatient.getItems().get(indexLigne);
             System.out.println("Simple-click ligne " + indexLigne + " colonne " + colone.getText() + " : " + patient);
             supprimer.setVisible(true);
-            int id = patient.getId();
+            priseEnCharge.setVisible(true);
+            priseEnCharge.setOnAction(event2 -> {
+                HelloApplication.changeScene("pageSecretaire/priseEnChargeView", new PriseEnChargeController(patient));
+            });
+                int id = patient.getId();
             supprimer.setOnAction(event1 -> {
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.setTitle("Confirmation de suppression");
@@ -110,8 +122,6 @@ public class AcceuilController implements Initializable {
                     supprimer.setVisible(false);
                 }
             });
-
-
         }
     }
 }

@@ -169,4 +169,24 @@ public class PatientRepository {
             throw new RuntimeException(e);
         }
     }
+
+    public int rechercheFichePatient (int id){
+
+        int id_fichePatient = 0;
+
+        String sql = "SELECT id_fichePatient FROM fiche_patient WHERE ref_userPatient = ?";
+
+        try{
+
+            PreparedStatement requete = connection.prepareStatement(sql);
+            requete.setInt(1,id);
+            ResultSet resultSet = requete.executeQuery();
+            while (resultSet.next()){
+                id_fichePatient = resultSet.getInt("id_fichePatient");
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        return id_fichePatient;
+    }
 }

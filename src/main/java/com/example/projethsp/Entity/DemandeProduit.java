@@ -14,6 +14,14 @@ public class DemandeProduit {
         this.valider = valider;
     }
 
+    public DemandeProduit(int ref_demande, int ref_produit, int nb_produit, boolean valider, String nom) {
+        this.ref_demande = ref_demande;
+        this.ref_produit = ref_produit;
+        this.nb_produit = nb_produit;
+        this.valider = valider;
+        this.nom = nom;
+    }
+
     public int getRef_demande() {
         return ref_demande;
     }
@@ -44,5 +52,16 @@ public class DemandeProduit {
 
     public void setValider(boolean valider) {
         this.valider = valider;
+    }
+
+    @Override
+    public String toString() {
+        return "DemandeProduit{" +
+                "ref_demande=" + ref_demande +
+                ", ref_produit=" + ref_produit +
+                ", nb_produit=" + nb_produit +
+                ", valider=" + valider +
+                ", nom='" + nom + '\'' +
+                '}';
     }
 }

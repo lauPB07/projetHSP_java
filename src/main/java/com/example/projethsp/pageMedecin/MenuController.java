@@ -15,6 +15,9 @@ public class MenuController {
     private Button demande;
 
     @FXML
+    private Button patient;
+
+    @FXML
     private Button deconnexion;
 
     @FXML
@@ -25,6 +28,11 @@ public class MenuController {
     @FXML
     void onClickDemande(ActionEvent event) {
         HelloApplication.changeScene("pageMedecin/mesDemandeView","Vos demandes");
+    }
+
+    @FXML
+    void onClickPatient(ActionEvent event) {
+        HelloApplication.changeScene("pageMedecin/listePatientView","Liste D'attente");
     }
 
     public void onClickDeconnexion(ActionEvent actionEvent) {

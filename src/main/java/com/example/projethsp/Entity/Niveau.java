@@ -26,9 +26,7 @@ public class Niveau {
 
     @Override
     public String toString() {
-        return "Niveau{" +
-                "num=" + num +
-                '}';
+        return "Niveau Gravité : "+ num ;
     }
 
     private int num;

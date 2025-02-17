@@ -15,7 +15,7 @@
       </Label>
       <Button layoutX="12.0" layoutY="167.0" mnemonicParsing="false" onAction="#inscption" prefHeight="25.0" prefWidth="97.0" text="Ajout patients" />
       <Button layoutX="12.0" layoutY="214.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="97.0" text="Fiche Patients" />
-      <Button layoutX="12.0" layoutY="260.0" mnemonicParsing="false" text="Prise en charge" />
+      <Button fx:id="priseEnCharge" layoutX="12.0" layoutY="260.0" mnemonicParsing="false" onAction="#priseEnCharge" text="Prise en charge" />
       <TableView fx:id="tableauPatient" layoutX="222.0" layoutY="79.0" onMouseClicked="#onListeSelection" prefHeight="374.0" prefWidth="482.0" />
       <Button layoutX="12.0" layoutY="428.0" mnemonicParsing="false" onAction="#deconnexion" prefHeight="25.0" prefWidth="97.0" text="Deconnexion" />
       <Button fx:id="supprimer" layoutX="12.0" layoutY="300.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="25.0" prefWidth="97.0" text="Supprimer" />

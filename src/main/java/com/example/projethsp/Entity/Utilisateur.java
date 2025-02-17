@@ -6,6 +6,7 @@ public class Utilisateur {
     private String prenom;
     private String email;
     private String mdp;
+    
 
     public int getId() {
         return id;
@@ -65,6 +66,13 @@ public class Utilisateur {
     }
 
     public Utilisateur(int id, String nom, String prenom, String email, int role) {
+        this.id = id;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.email = email;
+        this.role = role;
+    }
+    public Utilisateur(int id, String nom, String prenom, String email) {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;

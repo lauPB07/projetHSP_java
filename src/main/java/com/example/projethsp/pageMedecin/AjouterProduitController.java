@@ -8,14 +8,13 @@ import com.example.projethsp.Repository.ProduitRepository;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.util.converter.IntegerStringConverter;
 
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.function.UnaryOperator;
 
 public class AjouterProduitController implements Initializable {
 
@@ -29,12 +28,18 @@ public class AjouterProduitController implements Initializable {
     private Button retour;
 
     @FXML
+    private Label status;
+
+    @FXML
     private Button valider;
 
     private int id;
 
-    public AjouterProduitController(int id) {
+    private String label;
+
+    public AjouterProduitController(int id,String label) {
         this.id = id;
+        this.label = label;
     }
 
     @FXML
@@ -47,15 +52,30 @@ public class AjouterProduitController implements Initializable {
         int idProduit = produit.getSelectionModel().getSelectedItem().getId();
         int nb = Integer.parseInt(this.nb.getText());
         DemandeProduit demandeProduit = new DemandeProduit(id,idProduit,nb,false);
+        System.out.println(id);
         DemandeProduitRepository repo = new DemandeProduitRepository();
+        System.out.println(demandeProduit.toString());
         repo.ajouter(demandeProduit);
         HelloApplication.changeScene("pageMedecin/mesDemandeView","Vos demandes");
+
+
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        this.status.setText(label);
         ProduitRepository repo = new ProduitRepository();
         ArrayList<FicheProduit> list = repo.selectProduit();
         this.produit.getItems().addAll(list);
+        UnaryOperator<TextFormatter.Change> filter = change -> {
+            String newText = change.getControlNewText();
+            if (newText.matches("\\d*")) {
+                return change;
+            }
+            return null;
+        };
+
+        TextFormatter<Integer> textFormatter = new TextFormatter<>(new IntegerStringConverter(), null, filter);
+        this.nb.setTextFormatter(textFormatter);
     }
 }

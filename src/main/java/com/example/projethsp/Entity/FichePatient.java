@@ -4,11 +4,13 @@ public class FichePatient {
     private int id_fichePatient;
     private int ref_userPatient;
     private int ref_userCreer;
+    private boolean valider;
 
-    public FichePatient(int id_fichePatient, int ref_userPatient, int ref_userCreer) {
+    public FichePatient(int id_fichePatient, int ref_userPatient, int ref_userCreer, boolean valider) {
         this.id_fichePatient = id_fichePatient;
         this.ref_userPatient = ref_userPatient;
         this.ref_userCreer = ref_userCreer;
+        this.valider = valider;
     }
 
     public int getId_fichePatient() {
@@ -33,5 +35,11 @@ public class FichePatient {
 
     public void setRef_userCreer(int ref_userCreer) {
         this.ref_userCreer = ref_userCreer;
+    }
+    public boolean getValider() {
+        return valider;
+    }
+    public void setValider(boolean valider) {
+        this.valider = valider;
     }
 }
