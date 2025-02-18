@@ -100,8 +100,6 @@ public class FicheProduit {
 
     @Override
     public String toString() {
-        return "id=" + id +
-                ", libelle='" + libelle + '\'' +
-                ", nbStocker=" + nbStocker;
+        return  libelle ;
     }
 }

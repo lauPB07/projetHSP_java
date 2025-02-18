@@ -59,10 +59,10 @@ public class DemandeProduitRepository {
 
         }
 
-        String sql1 = "INSERT INTO `historiqueaction`(`ref_user`, `action`, `date`, `heure`) VALUES (?,'Ajout Demande',DATE( NOW() ),TIME(NOW()))";
+        String sql2 = "INSERT INTO `historiqueaction`(`ref_user`, `action`, `date`, `heure`) VALUES (?,'Ajout Demande',DATE( NOW() ),TIME(NOW()))";
 
         try {
-            PreparedStatement requete = connection.prepareStatement(sql1);
+            PreparedStatement requete = connection.prepareStatement(sql2);
             requete.setInt(1,Utilisateurconnecte.getInstance().getId());
             requete.executeUpdate();
         } catch (SQLException e) {
