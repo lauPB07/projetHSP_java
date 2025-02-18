@@ -15,5 +15,6 @@
       <Button layoutX="130.0" layoutY="151.0" mnemonicParsing="false" onAction="#user" text="Utilisateur" />
       <Button layoutX="122.0" layoutY="442.0" mnemonicParsing="false" onAction="#deconnexion" text="Deconnexion" />
       <Button layoutX="92.0" layoutY="205.0" mnemonicParsing="false" onAction="#historiqueCo" text="Historique de connexion" />
+      <Button layoutX="97.0" layoutY="270.0" mnemonicParsing="false" onAction="#historiqueAction" text="Historique des actions " />
    </children>
 </Pane>

@@ -1,5 +1,6 @@
 package com.example.projethsp.pageAdmin;
 
+import com.example.projethsp.Entity.HistoriqueAction;
 import com.example.projethsp.Entity.HistoriqueConnexion;
 import com.example.projethsp.HelloApplication;
 import com.example.projethsp.Repository.HistoriqueRepository;
@@ -14,10 +15,10 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class HistoriqueConnexionController implements Initializable {
+public class HistoriqueActionController implements Initializable {
 
     @FXML
-    private TableView<HistoriqueConnexion> tableauHistorique;
+    private TableView<HistoriqueAction> historique;
 
     private HistoriqueRepository repository = new HistoriqueRepository();
 
@@ -26,17 +27,18 @@ public class HistoriqueConnexionController implements Initializable {
         String [][] colonnes = {
                 {"Nom","nom"},
                 {"Prenom", "prenom"},
+                {"Action", "action"},
                 {"Date", "date"},
                 {"Heure", "heure"}
         };
         for (int i = 0; i <colonnes.length; i++){
-            TableColumn<HistoriqueConnexion,String> maColonne = new TableColumn<>(colonnes[i][0]);
+            TableColumn<HistoriqueAction,String> maColonne = new TableColumn<>(colonnes[i][0]);
             maColonne.setCellValueFactory(new PropertyValueFactory<>(colonnes[i][1]));
-            tableauHistorique.getColumns().add(maColonne);
+            historique.getColumns().add(maColonne);
         }
 
-        ArrayList<HistoriqueConnexion> list = repository.recupererHistorique();
-        tableauHistorique.getItems().addAll(list);
+        ArrayList<HistoriqueAction> list = repository.recupererHistoriqueAction();
+        historique.getItems().addAll(list);
     }
 
     @FXML
