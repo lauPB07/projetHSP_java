@@ -25,4 +25,9 @@ public class MenuController {
     public void gererDemande(ActionEvent event){
         HelloApplication.changeScene("pageGestionStock/demandeView","Gérer les demandes");
     }
+
+    @FXML
+    public void commande(ActionEvent event){
+        HelloApplication.changeScene("pageGestionStock/commandeView","Passer une commande");
+    }
 }

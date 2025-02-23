@@ -36,10 +36,10 @@ public class DemandeProduitRepository {
         return liste;
     }
     public void ajouter(DemandeProduit demandeProduit) {
-        String sql1 = "SELECT * FROM demandeProduit WHERE d.ref_demande = ? and d.ref_produit = ?";
+        String sql2 = "SELECT * FROM demandeProduit WHERE d.ref_demande = ? and d.ref_produit = ?";
         String sql = "INSERT INTO demandeproduit (ref_demande,ref_produit,nb,valider) VALUES (?,?,?,?)";
         try {
-            PreparedStatement requeteSelect = connection.prepareStatement(sql1);
+            PreparedStatement requeteSelect = connection.prepareStatement(sql2);
             requeteSelect.setInt(1, demandeProduit.getRef_demande());
             requeteSelect.setInt(2, demandeProduit.getRef_produit());
             ResultSet resultatRequete = requeteSelect.executeQuery();
@@ -59,10 +59,10 @@ public class DemandeProduitRepository {
 
         }
 
-        sql1 = "INSERT INTO `historiqueaction`(`ref_user`, `action`, `date`, `heure`) VALUES (?,'Ajout DemandeProduit',DATE( NOW() ),TIME(NOW()))";
+        String sql1 = "INSERT INTO `historiqueaction`(`ref_user`, `action`, `date`, `heure`) VALUES (?,'Ajout DemandeProduit',DATE( NOW() ),TIME(NOW()))";
 
         try {
-            PreparedStatement requete = connection.prepareStatement(sql1);
+            PreparedStatement requete = connection.prepareStatement(sql2);
             requete.setInt(1,Utilisateurconnecte.getInstance().getId());
             requete.executeUpdate();
         } catch (SQLException e) {

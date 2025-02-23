@@ -33,6 +33,25 @@ public class ProduitRepository {
         return liste;
     }
 
+    public ArrayList<FicheProduit> selectProduitByFournisseur(int fournisseur){
+        ArrayList<FicheProduit> liste = new ArrayList<>();
+        String sql = "SELECT * FROM ficheproduit where ref_fournisseur = ? ";
+        try {
+            PreparedStatement requetePrepare = connection.prepareStatement(sql);
+            requetePrepare.setInt(1,fournisseur);
+            ResultSet resultatRequette = requetePrepare.executeQuery();
+            while (resultatRequette.next()) {
+                liste.add(new FicheProduit(resultatRequette.getInt("id_ficheProduit"),resultatRequette.getString("libelle"),resultatRequette.getString("description"),resultatRequette.getFloat("prix"),resultatRequette.getInt("nbStocker"),resultatRequette.getInt("ref_niv"),resultatRequette.getInt("ref_fournisseur"),resultatRequette.getInt("ref_user")));
+            }
+
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+
+        }
+        return liste;
+    }
+
     public void ajoutProduit(String libelle, String description, float prix, int nb,int niv, int fournisseur,int user, Label label){
 
             String sql1 = "INSERT INTO  ficheproduit (libelle,description,prix,nbStocker,ref_niv,ref_fournisseur,ref_user) VALUES (?,?,?,?,?,?,?) ";
