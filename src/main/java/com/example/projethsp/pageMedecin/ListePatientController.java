@@ -7,15 +7,13 @@ import com.example.projethsp.Repository.FichePatientRepository;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TablePosition;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -58,7 +56,15 @@ public class ListePatientController implements Initializable {
                 TablePosition cell = liste.getSelectionModel().getSelectedCells().get(0);
                 int indexLigne = cell.getRow();
                 int id = liste.getItems().get(indexLigne).getId();
-                HelloApplication.changeScene("pageMedecin/produitDemandeView",new ProduitDemandeController(id));
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.showAndWait().ifPresent(response -> {
+                    if (response == ButtonType.OK) {
+                        System.out.println(id);
+                        fichePatient.valider(id);
+                        HelloApplication.changeScene("pageMedecin/listePatientView","Liste D'attente");
+                    }
+                });
+
             } else if (event.getClickCount() == 1) {
                 TablePosition cell = liste.getSelectionModel().getSelectedCells().get(0);
                 int indexLigne = cell.getRow();
