@@ -29,6 +29,12 @@ public class MesDemandeController implements Initializable {
     @FXML
     private Button suprimer;
 
+    @FXML
+    private Button valider;
+
+    @FXML
+    private Button ajouter;
+
     private int idDemande;
 
     DemandeRepository demandeRepository = new DemandeRepository();
@@ -36,6 +42,16 @@ public class MesDemandeController implements Initializable {
     @FXML
     void OnClickRetour(ActionEvent event) {
         HelloApplication.changeScene("pageMedecin/menuView","Menu");
+    }
+
+    @FXML
+    void onClickValider(ActionEvent event) {
+        demandeRepository.update(idDemande);
+        HelloApplication.changeScene("pageMedecin/mesDemandeView","Mes Demande");
+    }
+    @FXML
+    void onClickAjouter(ActionEvent event) {
+        HelloApplication.changeScene("pageMedecin/demandeProduitView","Nouvelle Damande");
     }
 
     @FXML
@@ -52,6 +68,7 @@ public class MesDemandeController implements Initializable {
                 int id = liste.getItems().get(indexLigne).getId();
                 idDemande = id;
                 this.suprimer.setVisible(true);
+                this.valider.setVisible(true);
             }
         }
     }
@@ -59,6 +76,7 @@ public class MesDemandeController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         this.suprimer.setVisible(false);
+        this.valider.setVisible(false);
         String [][] colonnes = {
                 {"ID","id"},
                 {"Titre","titre"},

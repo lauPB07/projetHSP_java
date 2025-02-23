@@ -71,4 +71,14 @@ public class DemandeRepository {
             throw new RuntimeException(e);
         }
     }
+    public void update(int id){
+        String sql = "UPDATE demande SET valider = 1 WHERE id_demande = ?";
+        try {
+            PreparedStatement requetePrepare = connection.prepareStatement(sql);
+            requetePrepare.setInt(1,id);
+            requetePrepare.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
