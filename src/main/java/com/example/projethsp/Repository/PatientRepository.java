@@ -189,4 +189,22 @@ public class PatientRepository {
         }
         return id_fichePatient;
     }
+    public ArrayList<Patient> recherche(String nom) {
+        ArrayList<Patient> liste = new ArrayList<>();
+        String sql = "SELECT * FROM utilisateur WHERE nom = ? AND ref_role = 7";
+        try {
+            PreparedStatement requetePrepare = connection.prepareStatement(sql);
+            requetePrepare.setString(1,nom);
+            ResultSet resultatRequette = requetePrepare.executeQuery();
+            while (resultatRequette.next()) {
+                liste.add(new Patient(resultatRequette.getInt("id_utilisateur"), resultatRequette.getString("nom"), resultatRequette.getString("prenom"), resultatRequette.getString("email"), resultatRequette.getInt("ref_role"), resultatRequette.getString("telephone"), resultatRequette.getString("rue"), resultatRequette.getString("cp"), resultatRequette.getString("ville"), resultatRequette.getString("numSecu")));
+            }
+
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+
+        }
+        return liste;
+    }
 }
