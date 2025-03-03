@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="834.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projethsp.pageAdmin.CommandeController">
+   <children>
+      <Label layoutX="199.0" layoutY="39.0" text="Toutes les commandes faites : ">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <PieChart fx:id="statCommande" layoutX="540.0" layoutY="109.0" prefHeight="232.0" prefWidth="263.0" />
+      <TableView fx:id="commandeTable" layoutX="52.0" layoutY="125.0" prefHeight="200.0" prefWidth="382.0" />
+      <Button layoutX="708.0" layoutY="445.0" mnemonicParsing="false" text="Retour" />
+      <Button fx:id="valider" layoutX="540.0" layoutY="445.0" mnemonicParsing="false" text="Valider la commande " />
+   </children>
+</Pane>

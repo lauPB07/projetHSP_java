@@ -47,7 +47,7 @@ public class CommandeController implements Initializable {
 
     @FXML
     public void retour(ActionEvent event){
-        HelloApplication.changeScene("pageGestionStock/menuView","Menu");
+        HelloApplication.changeScene("pageGestionStock/AllCommandeView","Toutes les commandes commande");
     }
 
     @FXML

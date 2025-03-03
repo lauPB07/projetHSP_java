@@ -8,7 +8,6 @@ public class Commande {
     private String nomUser;
     private String prenomUser;
     private int idProduit;
-    private float prixProduit;
     private float prixFinal;
     private int idStatus;
     private int idFournisseur;
@@ -61,13 +60,6 @@ public class Commande {
         this.idProduit = idProduit;
     }
 
-    public float getPrixProduit() {
-        return prixProduit;
-    }
-
-    public void setPrixProduit(float prixProduit) {
-        this.prixProduit = prixProduit;
-    }
 
     public float getPrixFinal() {
         return prixFinal;
@@ -101,20 +93,30 @@ public class Commande {
         isValidate = validate;
     }
 
-    public Commande(int idCommande, int nbProduit, int idUser, String nomUser, String prenomUser, int idProduit, float prixProduit, float prixFinal, int idStatus, int idFournisseur, Boolean isValidate) {
+    public Commande(int idCommande, int nbProduit, int idUser, String nomUser, String prenomUser, int idProduit,float prixFinal, int idStatus, int idFournisseur, Boolean isValidate, String libelleProduit) {
         this.idCommande = idCommande;
         this.nbProduit = nbProduit;
         this.idUser = idUser;
         this.nomUser = nomUser;
         this.prenomUser = prenomUser;
         this.idProduit = idProduit;
-        this.prixProduit = prixProduit;
         this.prixFinal = prixFinal;
         this.idStatus = idStatus;
         this.idFournisseur = idFournisseur;
         this.isValidate = isValidate;
+        this.libelleProduit = libelleProduit;
     }
 
     private Boolean isValidate;
+
+    public String getLibelleProduit() {
+        return libelleProduit;
+    }
+
+    public void setLibelleProduit(String libelleProduit) {
+        this.libelleProduit = libelleProduit;
+    }
+
+    private String libelleProduit;
 
 }
