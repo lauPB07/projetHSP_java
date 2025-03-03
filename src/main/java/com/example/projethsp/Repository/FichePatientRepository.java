@@ -36,4 +36,17 @@ public class FichePatientRepository {
         return liste;
 
     }
+
+    public void valider(int id){
+        String sql = "UPDATE fiche_patient SET valider = 1 WHERE ref_userPatient = ?";
+
+        try {
+            PreparedStatement requetePrepare1 = connection.prepareStatement(sql);
+            requetePrepare1.setInt(1, id);
+            requetePrepare1.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+
+        }
+    }
 }
