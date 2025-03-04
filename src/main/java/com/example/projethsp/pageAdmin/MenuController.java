@@ -25,6 +25,11 @@ public class MenuController {
     }
 
     @FXML
+    public void commande(ActionEvent event){
+        HelloApplication.changeScene("pageAdmin/commandeView","Vue sur toutes les commandes  ");
+    }
+
+    @FXML
     public void deconnexion(ActionEvent event){
         if (Utilisateurconnecte.clearInstance()) {
             HelloApplication.changeScene("acceuil/loginView", "Connexion");

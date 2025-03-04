@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="428.0" prefWidth="740.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projethsp.pageGestionStock.AllCommandeController">
+   <children>
+      <Label layoutX="254.0" layoutY="24.0" text="Suivie des commandes :">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <TableView fx:id="commandeTable" layoutX="193.0" layoutY="90.0" prefHeight="283.0" prefWidth="503.0" />
+      <Button layoutX="14.0" layoutY="219.0" mnemonicParsing="false" onAction="#ajouterCommande" text="Ajouter une commande" />
+      <Button layoutX="59.0" layoutY="276.0" mnemonicParsing="false" onAction="#retour" text="Retour" />
+      <Button fx:id="supprimer" layoutX="14.0" layoutY="160.0" mnemonicParsing="false" text="Supprimer la commande" />
+   </children>
+</Pane>

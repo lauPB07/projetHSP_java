@@ -39,26 +39,8 @@ public class AcceuilController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        String[][] colonnes = {
-                {"ID User", "id"},
-                {"Nom", "nom"},
-                {"Prenom", "prenom"},
-                {"Email", "email"},
-                {"Role", "role"},
-                {"Telephone", "telephone"},
-                {"Rue", "rue"},
-                {"Code Postale", "cp"},
-                {"Ville", "ville"},
-                {"Numéro securiter sociale", "numSecu"}
-        };
 
-        for (int i = 0; i < colonnes.length; i++) {
-            TableColumn<Patient, String> maColonne = new TableColumn<>(colonnes[i][0]);
-            maColonne.setCellValueFactory(new PropertyValueFactory<>(colonnes[i][1]));
-            tableauPatient.getColumns().add(maColonne);
-        }
-        ArrayList<Patient> list = patientRepository.recupererPatient();
-        tableauPatient.getItems().addAll(list);
+        initialiser();
 
         supprimer.setVisible(false);
         priseEnCharge.setVisible(false);
@@ -77,6 +59,12 @@ public class AcceuilController implements Initializable {
     void priseEnCharge(ActionEvent event) {
 
     }
+
+    @FXML
+    private TextField rechercheField;
+
+    @FXML
+    private Button resetField;
 
     @FXML
     public void deconnexion(ActionEvent event) {
@@ -123,5 +111,67 @@ public class AcceuilController implements Initializable {
                 }
             });
         }
+
     }
+     public void rechercher( ActionEvent event){
+
+        if(rechercheField.getText() != null){
+            String[][] colonnes = {
+                    {"ID User", "id"},
+                    {"Nom", "nom"},
+                    {"Prenom", "prenom"},
+                    {"Email", "email"},
+                    {"Role", "role"},
+                    {"Telephone", "telephone"},
+                    {"Rue", "rue"},
+                    {"Code Postale", "cp"},
+                    {"Ville", "ville"},
+                    {"Numéro securiter sociale", "numSecu"}
+            };
+
+            for (int i = 0; i < colonnes.length; i++) {
+                TableColumn<Patient, String> maColonne = new TableColumn<>(colonnes[i][0]);
+                maColonne.setCellValueFactory(new PropertyValueFactory<>(colonnes[i][1]));
+                tableauPatient.getColumns().add(maColonne);
+            }
+            ArrayList<Patient> list = patientRepository.recherche(rechercheField.getText());
+            tableauPatient.getItems().setAll(list);
+            System.out.println("oula");
+        }else{
+            label.setText("Veuillez rentrer un nom");
+            System.out.println("ici");
+        }
+     }
+
+     public void initialiser(){
+
+         String[][] colonnes = {
+                 {"ID User", "id"},
+                 {"Nom", "nom"},
+                 {"Prenom", "prenom"},
+                 {"Email", "email"},
+                 {"Role", "role"},
+                 {"Telephone", "telephone"},
+                 {"Rue", "rue"},
+                 {"Code Postale", "cp"},
+                 {"Ville", "ville"},
+                 {"Numéro securiter sociale", "numSecu"}
+         };
+
+         for (int i = 0; i < colonnes.length; i++) {
+             TableColumn<Patient, String> maColonne = new TableColumn<>(colonnes[i][0]);
+             maColonne.setCellValueFactory(new PropertyValueFactory<>(colonnes[i][1]));
+             tableauPatient.getColumns().add(maColonne);
+         }
+         ArrayList<Patient> list = patientRepository.recupererPatient();
+         tableauPatient.getItems().setAll(list);
+
+     }
+
+     public void reset(ActionEvent event){
+
+        initialiser();
+
+     }
+
 }
