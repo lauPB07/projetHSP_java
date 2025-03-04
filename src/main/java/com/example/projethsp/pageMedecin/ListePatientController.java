@@ -1,6 +1,7 @@
 package com.example.projethsp.pageMedecin;
 
 import com.example.projethsp.Entity.FichePatient;
+import com.example.projethsp.Entity.Hospitalisation;
 import com.example.projethsp.Entity.Utilisateur;
 import com.example.projethsp.HelloApplication;
 import com.example.projethsp.Repository.FichePatientRepository;
@@ -46,7 +47,7 @@ public class ListePatientController implements Initializable {
 
     @FXML
     void onClickHospitalisation(ActionEvent event) {
-
+        HelloApplication.changeScene("pageMedecin/newHospitalisationView",new NewHospitalisationController(id));
     }
 
     @FXML
