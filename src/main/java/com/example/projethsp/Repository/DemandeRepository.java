@@ -70,6 +70,15 @@ public class DemandeRepository {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        sql = "INSERT INTO `historiqueaction`(`ref_user`, `action`, `date`, `heure`) VALUES (?,'Suprimer Demande',DATE( NOW() ),TIME(NOW()))";
+
+        try {
+            PreparedStatement requete = connection.prepareStatement(sql);
+            requete.setInt(1, Utilisateurconnecte.getInstance().getId());
+            requete.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
     public void update(int id){
         String sql = "UPDATE demande SET valider = 1 WHERE id_demande = ?";
@@ -77,6 +86,15 @@ public class DemandeRepository {
             PreparedStatement requetePrepare = connection.prepareStatement(sql);
             requetePrepare.setInt(1,id);
             requetePrepare.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        sql = "INSERT INTO `historiqueaction`(`ref_user`, `action`, `date`, `heure`) VALUES (?,'Valider Demande',DATE( NOW() ),TIME(NOW()))";
+
+        try {
+            PreparedStatement requete = connection.prepareStatement(sql);
+            requete.setInt(1, Utilisateurconnecte.getInstance().getId());
+            requete.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
