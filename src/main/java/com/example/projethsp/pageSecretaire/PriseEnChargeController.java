@@ -29,6 +29,7 @@ public class PriseEnChargeController implements Initializable {
     void valider(ActionEvent event) {
         System.out.println("test");
         priseEnChargeRepository.ajouterPriseEnCharge(dateField.getValue(),comboBox.getValue(),symptomesField.getText(), String.valueOf(nivBox.getValue().getId()),new PatientRepository().rechercheFichePatient(patient.getId()),Utilisateurconnecte.getInstance().getId());
+        HelloApplication.changeScene("pageSecretaire/acceuilView","Acceuil");
     }
 
     @FXML
@@ -97,6 +98,7 @@ public class PriseEnChargeController implements Initializable {
         comboBox.getValue();
 
         valider.setOnAction(this::valider);
+
 
     }
 }
