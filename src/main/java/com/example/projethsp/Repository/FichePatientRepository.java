@@ -2,6 +2,7 @@ package com.example.projethsp.Repository;
 
 import com.example.projethsp.BDD.Bdd;
 import com.example.projethsp.Entity.Utilisateur;
+import com.example.projethsp.Entity.Utilisateurconnecte;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -47,6 +48,15 @@ public class FichePatientRepository {
         } catch (SQLException e) {
             throw new RuntimeException(e);
 
+        }
+        sql = "INSERT INTO `historiqueaction`(`ref_user`, `action`, `date`, `heure`) VALUES (?,'Valider Fiche Patient',DATE( NOW() ),TIME(NOW()))";
+
+        try {
+            PreparedStatement requete = connection.prepareStatement(sql);
+            requete.setInt(1, Utilisateurconnecte.getInstance().getId());
+            requete.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
     }
 }

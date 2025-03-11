@@ -13,6 +13,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Objects;
+import java.util.regex.Pattern;
 
 public class UtilisateurRepository {
 
@@ -122,5 +124,42 @@ public class UtilisateurRepository {
 
 
     }
+
+    public void modifmdp(String nouveau){
+        String sql = "INSERT INTO `historiqueaction`(`ref_user`, `action`, `date`, `heure`) VALUES (?,'Modification Mot de passe',DATE( NOW() ),TIME(NOW()))";
+
+        try {
+            PreparedStatement requete = connection.prepareStatement(sql);
+            requete.setInt(1, Utilisateurconnecte.getInstance().getId());
+            requete.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        String sql1 = "UPDATE utilisateur SET `mdp` = ? WHERE id_utilisateur = ?";
+        try {
+            PreparedStatement requete = connection.prepareStatement(sql1);
+            requete.setString(1, bcrypt.encode(nouveau));
+            requete.setInt(2, Utilisateurconnecte.getInstance().getId());
+            System.out.println(Utilisateurconnecte.getInstance().getId());
+            requete.executeUpdate();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+    public boolean isValidPassword(String password) {
+
+        if (password.length() < 12) {
+            return false;
+        }
+
+        boolean hasUpperCase = Pattern.compile("[A-Z]").matcher(password).find();
+        boolean hasLowerCase = Pattern.compile("[a-z]").matcher(password).find();
+        boolean hasSpecialChar = Pattern.compile("[^a-zA-Z0-9]").matcher(password).find();
+        return hasUpperCase && hasLowerCase && hasSpecialChar;
+    }
+
+
 }
 

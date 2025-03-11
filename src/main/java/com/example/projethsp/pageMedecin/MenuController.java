@@ -9,7 +9,7 @@ import javafx.scene.control.Button;
 public class MenuController {
 
     @FXML
-    private Button ajouter;
+    private Button modif;
 
     @FXML
     private Button demande;
@@ -21,8 +21,8 @@ public class MenuController {
     private Button deconnexion;
 
     @FXML
-    void onClickAjouter(ActionEvent event) {
-        HelloApplication.changeScene("pageMedecin/demandeStockView","Ajouter une demande");
+    void onClickModif(ActionEvent event) {
+        HelloApplication.changeScene("Acceuil/modifMdpView","Modifier Mot De Passe");
     }
 
     @FXML

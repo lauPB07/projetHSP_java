@@ -4,8 +4,17 @@ public class Hospitalisation {
     private int id;
     private String dateDebut;
     private String dateFin;
+    private String Description;
     private int ref_chambre;
     private int ref_user;
+
+    public Hospitalisation(String dateDebut, String dateFin, String description, int ref_chambre, int ref_user) {
+        this.dateDebut = dateDebut;
+        this.dateFin = dateFin;
+        Description = description;
+        this.ref_chambre = ref_chambre;
+        this.ref_user = ref_user;
+    }
 
     public int getId() {
         return id;
@@ -29,6 +38,14 @@ public class Hospitalisation {
 
     public void setDateFin(String dateFin) {
         this.dateFin = dateFin;
+    }
+
+    public String getDescription() {
+        return Description;
+    }
+
+    public void setDescription(String description) {
+        Description = description;
     }
 
     public int getRef_chambre() {

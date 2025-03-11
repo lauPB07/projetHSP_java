@@ -12,7 +12,7 @@
                 <Font size="24.0" />
             </font>
         </Label>
-        <Button fx:id="ajouter" layoutX="234.0" layoutY="107.0" mnemonicParsing="false" onAction="#onClickAjouter" text="Ajouter une demande" />
+        <Button fx:id="modif" layoutX="234.0" layoutY="107.0" mnemonicParsing="false" onAction="#onClickModif" text="Modifier Mot De Passe" />
         <Button fx:id="demande" layoutX="242.0" layoutY="174.0" mnemonicParsing="false" onAction="#onClickDemande" text="Voir mes demande" />
         <Button fx:id="deconnexion" layoutX="257.0" layoutY="298.0" mnemonicParsing="false" onAction="#onClickDeconnexion" text="Deconnexion" />
       <Button fx:id="patient" layoutX="259.0" layoutY="232.0" mnemonicParsing="false" onAction="#onClickPatient" text="Liste patient" />
