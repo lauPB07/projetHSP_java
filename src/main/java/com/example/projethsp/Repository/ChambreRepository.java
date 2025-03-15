@@ -13,8 +13,6 @@ public class ChambreRepository {
     static Connection connection = connexionBdd.getBdd();
     public ArrayList<Chambre> selectChambre(String dateDebut, String dateFin) {
         ArrayList<Chambre> liste = new ArrayList<>();
-        System.out.println(dateDebut);
-        System.out.println(dateFin);
         String sql = "SELECT * FROM chambre WHERE id_chambre not in(SELECT DISTINCT ref_chambre FROM hospitalisation WHERE dateDebut BETWEEN ? AND ? OR dateFin BETWEEN ? AND ?);";
         try {
             PreparedStatement requetePrepare = connection.prepareStatement(sql);
