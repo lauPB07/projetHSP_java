@@ -37,8 +37,10 @@ public class MenuController {
     @FXML
     void onClickOrdonnance(ActionEvent event) {
         HelloApplication.changeScene("pagePatient/ordonnanceView", "Ordonnance");
-
     }
 
-
+    @FXML
+    void onClickModif(ActionEvent event) {
+        HelloApplication.changeScene("Acceuil/modifMdpView","Modifier Mot De Passe");
+    }
 }
