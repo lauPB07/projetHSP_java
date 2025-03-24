@@ -12,9 +12,9 @@
                 <Font size="24.0" />
             </font>
         </Label>
-        <Button fx:id="modif" layoutX="234.0" layoutY="107.0" mnemonicParsing="false" onAction="#onClickModif" text="Modifier Mot De Passe" />
-        <Button fx:id="demande" layoutX="242.0" layoutY="174.0" mnemonicParsing="false" onAction="#onClickDemande" text="Voir mes demande" />
-        <Button fx:id="deconnexion" layoutX="257.0" layoutY="298.0" mnemonicParsing="false" onAction="#onClickDeconnexion" text="Deconnexion" />
-      <Button fx:id="patient" layoutX="259.0" layoutY="232.0" mnemonicParsing="false" onAction="#onClickPatient" text="Liste patient" />
+        <Button fx:id="modif" layoutX="231.0" layoutY="211.0" mnemonicParsing="false" onAction="#onClickModif" text="Modifier Mot De Passe" />
+        <Button fx:id="demande" layoutX="232.0" layoutY="99.0" mnemonicParsing="false" onAction="#onClickDemande" prefHeight="26.0" prefWidth="137.0" text="Voir mes demande" />
+        <Button fx:id="deconnexion" layoutX="230.0" layoutY="265.0" mnemonicParsing="false" onAction="#onClickDeconnexion" prefHeight="26.0" prefWidth="137.0" text="Deconnexion" />
+      <Button fx:id="patient" layoutX="232.0" layoutY="157.0" mnemonicParsing="false" onAction="#onClickPatient" prefHeight="26.0" prefWidth="137.0" text="Liste patient" />
     </children>
 </AnchorPane>

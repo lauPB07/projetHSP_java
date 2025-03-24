@@ -3,6 +3,7 @@ package com.example.projethsp.Repository;
 import com.example.projethsp.BDD.Bdd;
 import com.example.projethsp.Entity.DemandeProduit;
 import com.example.projethsp.Entity.Hospitalisation;
+import com.example.projethsp.Entity.Ordonnance;
 import com.example.projethsp.Entity.Utilisateurconnecte;
 
 import java.sql.*;
@@ -36,5 +37,22 @@ public class HospitalisationRepository {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+    public ArrayList<Hospitalisation> selectPatient() {
+        ArrayList<Hospitalisation> liste = new ArrayList<>();
+        String sql = "SELECT h.*,c.num FROM hospitalisation as h INNER JOIN chambre as c on h.ref_chambre=c.id_chambre WHERE h.ref_user = ? and h.dateFin = DATE(NOW());";
+        try {
+            PreparedStatement requetePrepare = connection.prepareStatement(sql);
+            requetePrepare.setInt(1, Utilisateurconnecte.getInstance().getId());
+            ResultSet resultatRequette = requetePrepare.executeQuery();
+            if (resultatRequette.next()) {
+                liste.add(new Hospitalisation(resultatRequette.getInt("h.id_hospitalisation"),resultatRequette.getString("h.dateDebut"),resultatRequette.getString("h.dateFin"),resultatRequette.getString("h.description"),resultatRequette.getString("c.num"),resultatRequette.getInt("ref_user")));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+
+        }
+        return liste;
+
     }
 }

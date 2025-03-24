@@ -6,6 +6,7 @@ public class Hospitalisation {
     private String dateFin;
     private String Description;
     private int ref_chambre;
+    private String chambre;
     private int ref_user;
 
     public Hospitalisation(String dateDebut, String dateFin, String description, int ref_chambre, int ref_user) {
@@ -13,6 +14,15 @@ public class Hospitalisation {
         this.dateFin = dateFin;
         Description = description;
         this.ref_chambre = ref_chambre;
+        this.ref_user = ref_user;
+    }
+
+    public Hospitalisation(int id, String dateDebut, String dateFin, String description, String chambre, int ref_user) {
+        this.dateDebut = dateDebut;
+        this.dateFin = dateFin;
+        this.chambre = chambre;
+        this.id = id;
+        Description = description;
         this.ref_user = ref_user;
     }
 
