@@ -46,6 +46,8 @@ public class ModifMdpController {
             HelloApplication.changeScene("pageGestionStock/menuView","Menu");
         } else if (role==4) {
             HelloApplication.changeScene("pageMedecin/menuView","Menu");
+        } else if (role==7) {
+            HelloApplication.changeScene("pagePatient/menuView","Menu");
         }
     }
 

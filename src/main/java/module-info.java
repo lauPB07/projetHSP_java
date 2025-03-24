@@ -23,5 +23,7 @@ module com.example.projethsp {
     opens com.example.projethsp.pageGestionStock to javafx.fxml;
     exports com.example.projethsp.pageMedecin;
     opens com.example.projethsp.pageMedecin to javafx.fxml;
+    exports com.example.projethsp.pagePatient;
+    opens com.example.projethsp.pagePatient to javafx.fxml;
 
 }
