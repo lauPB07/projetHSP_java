@@ -4,17 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9ebbc6f-9e1e-4f79-acfe-6ff704ebc164" name="Changes" comment="feat(PatientRepository):ajout en base de donnée dans la table fiche_patient de la ref_userPatient et ref_userCreer apres creation d'un user">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/projethsp/Acceuil/modifMdpView.fxml" afterDir="false" />
+    <list default="true" id="f9ebbc6f-9e1e-4f79-acfe-6ff704ebc164" name="Changes" comment="feat(PriseEnChargeController) : changement de scene apres validation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/DemandeProduitRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/DemandeProduitRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/DemandeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/DemandeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/FichePatientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/FichePatientRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/HospitalisationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/HospitalisationRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/OrdonnanceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/OrdonnanceRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/UtilisateurRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/UtilisateurRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/pageMedecin/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/pageMedecin/MenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projethsp/pageMedecin/menuView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projethsp/pageMedecin/menuView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,20 +15,13 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
-      </MavenGeneralSettings>
-    </option>
   </component>
   <component name="ProjectColorInfo">{
         &quot;associatedIndex&quot;: 2
@@ -153,14 +137,6 @@
       <workItem from="1740487331664" duration="3380000" />
       <workItem from="1740573960913" duration="2992000" />
       <workItem from="1740989859523" duration="2717000" />
-      <workItem from="1740392444641" duration="5260000" />
-      <workItem from="1740480236585" duration="7284000" />
-      <workItem from="1740871046311" duration="1339000" />
-      <workItem from="1740913311743" duration="116000" />
-      <workItem from="1741005278659" duration="10184000" />
-      <workItem from="1741094315211" duration="2499000" />
-      <workItem from="1741177633722" duration="10065000" />
-      <workItem from="1741250659073" duration="8743000" />
     </task>
     <task id="LOCAL-00001" summary="feat(AcceuilController):creation de la methode onListeSelection">
       <option name="closed" value="true" />
@@ -178,7 +154,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737378394745</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feat() : ajout du champ recherche et du boutton afin de chercher un utilisateur.">
+      <option name="closed" value="true" />
+      <created>1741013626134</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1741013626134</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,6 +171,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat(AcceuilController):creation de la methode onListeSelection" />
     <MESSAGE value="feat(EditerPatientController):ajout des methode et du skeleton de la page editerPatientVeiw" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(EditerPatientController):ajout des methode et du skeleton de la page editerPatientVeiw" />
+    <MESSAGE value="feat() : ajout du champ recherche et du boutton afin de chercher un utilisateur." />
+    <MESSAGE value="feat(PriseEnChargeController) : changement de scene apres validation" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(PriseEnChargeController) : changement de scene apres validation" />
   </component>
 </project>
