@@ -8,6 +8,7 @@ module com.example.projethsp {
     requires org.kordamp.bootstrapfx.core;
     requires java.sql;
     requires spring.security.crypto;
+    requires itextpdf;
 
     opens com.example.projethsp to javafx.fxml;
     exports com.example.projethsp;

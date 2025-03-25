@@ -1,6 +1,11 @@
 package com.example.projethsp.pagePatient;
 
-import com.example.projethsp.Entity.Demande;
+import com.example.projethsp.Entity.Utilisateur;
+import com.example.projethsp.Entity.Utilisateurconnecte;
+import com.itextpdf.text.*;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
 import com.example.projethsp.Entity.Ordonnance;
 import com.example.projethsp.HelloApplication;
 import com.example.projethsp.Repository.OrdonnanceRepository;
@@ -8,15 +13,15 @@ import com.example.projethsp.pageMedecin.ProduitDemandeController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TablePosition;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.net.URL;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -31,7 +36,9 @@ public class OrdonnanceController implements Initializable {
     @FXML
     private Button telecharger;
 
-    private int idPatient;
+    private int id;
+
+    private String ordonnance;
 
     @FXML
     void OnClickRetour(ActionEvent event) {
@@ -45,12 +52,13 @@ public class OrdonnanceController implements Initializable {
                 TablePosition cell = liste.getSelectionModel().getSelectedCells().get(0);
                 int indexLigne = cell.getRow();
                 int id = liste.getItems().get(indexLigne).getId();
-                HelloApplication.changeScene("pageMedecin/produitDemandeView",new ProduitDemandeController(id));
             } else if (event.getClickCount() == 1) {
                 TablePosition cell = liste.getSelectionModel().getSelectedCells().get(0);
                 int indexLigne = cell.getRow();
-                int id = liste.getItems().get(indexLigne).getId();
-                idPatient = id;
+                int id = liste.getItems().get(indexLigne).getRef_user();
+                String contenue = liste.getItems().get(indexLigne).getContenue();
+                this.id = id;
+                this.ordonnance = contenue;
                 this.telecharger.setVisible(true);
             }
         }
@@ -58,8 +66,70 @@ public class OrdonnanceController implements Initializable {
 
     @FXML
     void onClickTelecharger(ActionEvent event) {
+        Document doc = new Document();
 
+        try {
+            // S'assurer que le dossier existe
+            File dossier = new File("C:\\Users\\djibr\\Cour\\projetHSP_java\\Pdf");
+            if (!dossier.exists()) {
+                dossier.mkdirs();
+            }
+
+            // Créer le PDF
+            PdfWriter.getInstance(doc, new FileOutputStream("C:\\Users\\djibr\\Cour\\projetHSP_java\\Pdf\\Ordonnance.pdf"));
+            doc.open();
+
+            // Infos patient
+            Paragraph patientInfo = new Paragraph();
+            patientInfo.setAlignment(Element.ALIGN_LEFT);
+            patientInfo.add(new Phrase("Patient\n", FontFactory.getFont("Comic Sans MS", 14, Font.BOLD)));
+            patientInfo.add(new Phrase(Utilisateurconnecte.getInstance().getNom() + "\n", FontFactory.getFont("Comic Sans MS", 12)));
+            patientInfo.add(new Phrase(Utilisateurconnecte.getInstance().getPrenom() + "\n", FontFactory.getFont("Comic Sans MS", 12)));
+            patientInfo.add(new Phrase(Utilisateurconnecte.getInstance().getEmail() + "\n", FontFactory.getFont("Comic Sans MS", 12)));
+            doc.add(patientInfo);
+
+            doc.add(new Paragraph(" ")); // espace
+
+            // Infos médecin
+            OrdonnanceRepository ordonnanceRepository = new OrdonnanceRepository();
+            String[] medecin = ordonnanceRepository.selectMedecin(this.id);
+
+            Paragraph medecinInfo = new Paragraph();
+            medecinInfo.setAlignment(Element.ALIGN_LEFT);
+            medecinInfo.add(new Phrase("Médecin\n", FontFactory.getFont("Comic Sans MS", 14, Font.BOLD)));
+            medecinInfo.add(new Phrase(medecin[0] + "\n", FontFactory.getFont("Comic Sans MS", 12)));
+            medecinInfo.add(new Phrase(medecin[1] + "\n", FontFactory.getFont("Comic Sans MS", 12)));
+            medecinInfo.add(new Phrase(medecin[2] + "\n", FontFactory.getFont("Comic Sans MS", 12)));
+            doc.add(medecinInfo);
+
+            doc.add(new Paragraph(" ")); // espace
+
+            // Contenu ordonnance centré
+            Paragraph contenu = new Paragraph();
+            contenu.setAlignment(Element.ALIGN_CENTER);
+            contenu.add(new Phrase("ORDONNANCE\n\n", FontFactory.getFont("Comic Sans MS", 16, Font.BOLD)));
+            contenu.add(new Phrase(this.ordonnance, FontFactory.getFont("Comic Sans MS", 13)));
+            doc.add(contenu);
+
+            // Confirmation
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Succès");
+            alert.setHeaderText(null);
+            alert.setContentText("L'ordonnance a bien été téléchargée !");
+            alert.showAndWait();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Erreur");
+            alert.setHeaderText("Échec du téléchargement");
+            alert.setContentText(e.getMessage());
+            alert.showAndWait();
+        } finally {
+            doc.close();
+        }
     }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
