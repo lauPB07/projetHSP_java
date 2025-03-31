@@ -1,10 +1,7 @@
 package com.example.projethsp.Repository;
 
 import com.example.projethsp.BDD.Bdd;
-import com.example.projethsp.Entity.Chambre;
-import com.example.projethsp.Entity.Demande;
-import com.example.projethsp.Entity.Ordonnance;
-import com.example.projethsp.Entity.Utilisateurconnecte;
+import com.example.projethsp.Entity.*;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -60,6 +57,22 @@ public class OrdonnanceRepository {
 
         }
         return liste;
-
+    }
+    public String [] selectMedecin(int id) {
+        String [] medecin = new String[3];
+        String sql = "SELECT nom,prenom,email FROM utilisateur WHERE id_utilisateur = ?;";
+        try {
+            PreparedStatement requetePrepare = connection.prepareStatement(sql);
+            requetePrepare.setInt(1, id);
+            ResultSet resultatRequette = requetePrepare.executeQuery();
+            if (resultatRequette.next()) {
+                medecin[0] = resultatRequette.getString(1);
+                medecin[1] = resultatRequette.getString(2);
+                medecin[2] = resultatRequette.getString(3);
+            }
+        }catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return medecin;
     }
 }

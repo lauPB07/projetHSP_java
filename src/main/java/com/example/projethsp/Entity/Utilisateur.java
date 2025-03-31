@@ -77,7 +77,12 @@ public class Utilisateur {
         this.nom = nom;
         this.prenom = prenom;
         this.email = email;
-        this.role = role;
+
+    }
+    public Utilisateur(String nom, String prenom, String email) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.email = email;
     }
 
     private int role;
