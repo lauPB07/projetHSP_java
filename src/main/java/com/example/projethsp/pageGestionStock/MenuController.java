@@ -28,6 +28,6 @@ public class MenuController {
 
     @FXML
     public void commande(ActionEvent event){
-        HelloApplication.changeScene("pageGestionStock/commandeAjoutView","Toutes les commandes commande");
+        HelloApplication.changeScene("pageGestionStock/AllCommandeView","Toutes les commandes commande");
     }
 }

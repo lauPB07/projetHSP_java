@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f9ebbc6f-9e1e-4f79-acfe-6ff704ebc164" name="Changes" comment="feat(PatientRepository):ajout en base de donnée dans la table fiche_patient de la ref_userPatient et ref_userCreer apres creation d'un user">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Entity/AjoutCommande.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Entity/AjoutCommande.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/CommandeAjoutRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/CommandeAjoutRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/pageGestionStock/CommandeAjoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/pageGestionStock/CommandeAjoutController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projethsp/pageGestionStock/commandeAjoutView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projethsp/pageGestionStock/commandeAjoutView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Entity/Commande.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Entity/Commande.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/CommandeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/CommandeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/pageGestionStock/AllCommandeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/pageGestionStock/AllCommandeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/pageGestionStock/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/pageGestionStock/MenuController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +151,7 @@
       <workItem from="1742919745306" duration="26000" />
       <workItem from="1743407539718" duration="30000" />
       <workItem from="1743409028553" duration="1495000" />
-      <workItem from="1743421331088" duration="7441000" />
+      <workItem from="1743421331088" duration="8403000" />
     </task>
     <task id="LOCAL-00001" summary="feat(AcceuilController):creation de la methode onListeSelection">
       <option name="closed" value="true" />

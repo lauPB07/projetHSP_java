@@ -29,12 +29,12 @@ public class AllCommandeController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         String [][] colonnes = {
+                {"Numéro commande ", "idCommande"},
                 {"NB Produit", "nbProduit"},
                 {"Nom", "nomUser"},
                 {"Prenom", "prenomUser"},
                 {"Prix Final", "prixFinal"},
-                {"Produit", "libelleProduit"},
-                {"Valider ? ","isValidate"},
+                {"Statut ","idStatus"},
         };
 
         for (int i = 0; i <colonnes.length; i++){
@@ -50,7 +50,7 @@ public class AllCommandeController implements Initializable {
 
     @FXML
     void ajouterCommande(ActionEvent event){
-        HelloApplication.changeScene("pageGestionStock/commandeView","Passer une commande");
+        HelloApplication.changeScene("pageGestionStock/commandeAjoutView","Passer une commande");
     }
 
     @FXML
