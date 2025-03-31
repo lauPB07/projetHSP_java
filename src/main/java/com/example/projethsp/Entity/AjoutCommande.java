@@ -2,6 +2,16 @@ package com.example.projethsp.Entity;
 
 public class AjoutCommande {
     private String nomFournisseur;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    private int id;
     private String nomProduit;
 
     public int getQuantite() {
@@ -14,7 +24,8 @@ public class AjoutCommande {
 
     private int quantite;
 
-    public AjoutCommande(String nomFournisseur, String nomProduit, double prixInitial, double prixFinal, int quantite) {
+    public AjoutCommande(int id ,String nomFournisseur, String nomProduit, double prixInitial, double prixFinal, int quantite) {
+        this.id = id;
         this.nomFournisseur = nomFournisseur;
         this.nomProduit = nomProduit;
         this.prixInitial = prixInitial;

@@ -8,7 +8,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="485.0" prefWidth="743.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projethsp.pageGestionStock.Com">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="485.0" prefWidth="743.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projethsp.pageGestionStock.CommandeAjoutController">
    <children>
       <Label layoutX="236.0" layoutY="14.0" prefHeight="28.0" prefWidth="161.0" text="Passer une commande :" />
       <ComboBox fx:id="fournisseurCombobox" layoutX="29.0" layoutY="111.0" onAction="#onClicked" prefWidth="150.0" />
@@ -20,8 +20,8 @@
             <TableColumn fx:id="quantite" prefWidth="120.79998779296875" text="Quantié" />
             <TableColumn fx:id="prixFinal" prefWidth="129.5999755859375" text="Prix Final" />
          </columns></TableView>
-      <Button fx:id="creerCommande" layoutX="561.0" layoutY="425.0" mnemonicParsing="false" text="Créer Commande" />
-      <Button layoutX="31.0" layoutY="425.0" mnemonicParsing="false" text="Retour" />
+      <Button fx:id="creerCommande" layoutX="561.0" layoutY="425.0" mnemonicParsing="false" onAction="#ajouter" text="Créer Commande" />
+      <Button layoutX="31.0" layoutY="425.0" mnemonicParsing="false" onAction="#retour" text="Retour" />
       <Label layoutX="48.0" layoutY="81.0" text="Fournisseur :" />
       <Label layoutX="236.0" layoutY="81.0" text="Produit :" />
       <ComboBox fx:id="produitCombobox" layoutX="236.0" layoutY="111.0" prefWidth="150.0" />

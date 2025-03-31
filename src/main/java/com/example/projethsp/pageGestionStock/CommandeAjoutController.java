@@ -2,7 +2,9 @@ package com.example.projethsp.pageGestionStock;
 import com.example.projethsp.Entity.AjoutCommande;
 import com.example.projethsp.Entity.FicheProduit;
 import com.example.projethsp.Entity.Fournisseur;
+import com.example.projethsp.Entity.Utilisateurconnecte;
 import com.example.projethsp.HelloApplication;
+import com.example.projethsp.Repository.CommandeAjoutRepository;
 import com.example.projethsp.Repository.FournisseurRepository;
 import com.example.projethsp.Repository.ProduitRepository;
 import javafx.beans.property.SimpleDoubleProperty;
@@ -16,13 +18,16 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class CommandeAjoutController implements Initializable {
 
     private FournisseurRepository fournisseurRepository = new FournisseurRepository();
     private ProduitRepository produitRepository = new ProduitRepository();
+    private CommandeAjoutRepository commandeAjoutRepository = new CommandeAjoutRepository();
 
     @FXML
     private Button ajouterBoutton;
@@ -74,6 +79,8 @@ public class CommandeAjoutController implements Initializable {
         prixFinal.setCellValueFactory(cellData -> new SimpleDoubleProperty(cellData.getValue().getPrixFinal()).asObject());
 
 
+
+
         tableProduit.setItems(commandeList);
     }
 
@@ -100,6 +107,7 @@ public class CommandeAjoutController implements Initializable {
             double total = prixValeur * quantiteValeur;
 
             AjoutCommande nouvelleCommande = new AjoutCommande(
+                    produitCombobox.getValue().getId(),
                     fournisseurCombobox.getValue().getNom(),
                     produitCombobox.getValue().getLibelle(),
                     prixValeur,
@@ -111,6 +119,14 @@ public class CommandeAjoutController implements Initializable {
             tableProduit.refresh();
             produitCombobox.getSelectionModel().clearSelection();
             quantiteField.clear();
+            float total2 = 0;
+
+            for (AjoutCommande produit : tableProduit.getItems()) {
+                total2 += (float) produit.getPrixFinal(); // Ajoute chaque prixFinal au total
+            }
+
+            prixTotal.setText(String.valueOf(total2)); // Affiche la somme totale
+
 
         } catch (NumberFormatException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Veuillez entrer une quantité valide.", ButtonType.OK);
@@ -120,6 +136,16 @@ public class CommandeAjoutController implements Initializable {
 
     @FXML
     void retour(ActionEvent event){
-        HelloApplication.changeScene("pageGestionStock/MenuController","Menu");
+        HelloApplication.changeScene("pageGestionStock/MenuView","Menu");
+    }
+
+    @FXML
+    void ajouter(ActionEvent event) throws SQLException {
+        commandeAjoutRepository.insererCommande(tableProduit.getItems().size(), Utilisateurconnecte.getInstance().getId(),
+                Float.parseFloat(prixTotal.getText()),fournisseurCombobox.getValue().getId());
+        for (AjoutCommande produit : tableProduit.getItems()) {
+            commandeAjoutRepository.insererProduitsCommande(commandeAjoutRepository.getDernierIdCommande(), produit.getId());
+        }
+
     }
 }

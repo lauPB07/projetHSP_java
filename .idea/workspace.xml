@@ -5,24 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f9ebbc6f-9e1e-4f79-acfe-6ff704ebc164" name="Changes" comment="feat(PatientRepository):ajout en base de donnée dans la table fiche_patient de la ref_userPatient et ref_userCreer apres creation d'un user">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/projethsp/Acceuil/modifMdpView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-<<<<<<< HEAD
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Entity/Utilisateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Entity/Utilisateur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/OrdonnanceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/OrdonnanceRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/pagePatient/OrdonnanceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/pagePatient/OrdonnanceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-=======
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/DemandeProduitRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/DemandeProduitRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/DemandeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/DemandeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/FichePatientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/FichePatientRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/HospitalisationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/HospitalisationRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/OrdonnanceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/OrdonnanceRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/UtilisateurRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/UtilisateurRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/pageMedecin/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/pageMedecin/MenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projethsp/pageMedecin/menuView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projethsp/pageMedecin/menuView.fxml" afterDir="false" />
->>>>>>> 80ece2e930578682dd50ab0771cff7fd3c39727e
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Entity/AjoutCommande.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Entity/AjoutCommande.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/CommandeAjoutRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/CommandeAjoutRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/pageGestionStock/CommandeAjoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/pageGestionStock/CommandeAjoutController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projethsp/pageGestionStock/commandeAjoutView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projethsp/pageGestionStock/commandeAjoutView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,20 +19,13 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
-      </MavenGeneralSettings>
-    </option>
   </component>
   <component name="ProjectColorInfo">{
         &quot;associatedIndex&quot;: 2
@@ -65,13 +45,8 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-<<<<<<< HEAD
-    &quot;last_directory_selection&quot;: &quot;C:/Users/djibr/Cour/projetHSP_java/src/main/java/com/example/projethsp/pagePatient&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/djibr/Cour/projetHSP_java/src/main/resources/com/example/projethsp/pagePatient&quot;,
-=======
     &quot;last_directory_selection&quot;: &quot;C:/Users/djibr/Cour/projetHSP_java/src/main/java/com/example/projethsp/Acceuil&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/magne/IdeaProjects/projetHSP_java/src/main/resources/com/example/projethsp/pageSecretaire&quot;,
->>>>>>> 80ece2e930578682dd50ab0771cff7fd3c39727e
+    &quot;last_opened_file_path&quot;: &quot;C:/ProjetMinecraft/Oldrilion/OldrilionUtils&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -174,13 +149,10 @@
       <workItem from="1741094315211" duration="2499000" />
       <workItem from="1741177633722" duration="10065000" />
       <workItem from="1741250659073" duration="8743000" />
-<<<<<<< HEAD
-      <workItem from="1741679287628" duration="1633000" />
-      <workItem from="1741941146791" duration="18472000" />
-      <workItem from="1742748814347" duration="480000" />
-      <workItem from="1742821126525" duration="9435000" />
-=======
->>>>>>> 80ece2e930578682dd50ab0771cff7fd3c39727e
+      <workItem from="1742919745306" duration="26000" />
+      <workItem from="1743407539718" duration="30000" />
+      <workItem from="1743409028553" duration="1495000" />
+      <workItem from="1743421331088" duration="7441000" />
     </task>
     <task id="LOCAL-00001" summary="feat(AcceuilController):creation de la methode onListeSelection">
       <option name="closed" value="true" />
@@ -203,6 +175,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat(AcceuilController):creation de la methode onListeSelection" />
