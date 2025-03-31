@@ -51,7 +51,7 @@ public class MesDemandeController implements Initializable {
     }
     @FXML
     void onClickAjouter(ActionEvent event) {
-        HelloApplication.changeScene("pageMedecin/demandeProduitView","Nouvelle Damande");
+        HelloApplication.changeScene("pageMedecin/demandeStockView","Nouvelle Damande");
     }
 
     @FXML
