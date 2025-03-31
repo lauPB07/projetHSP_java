@@ -3,18 +3,31 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="485.0" prefWidth="743.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="485.0" prefWidth="743.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projethsp.pageGestionStock.Com">
    <children>
       <Label layoutX="236.0" layoutY="14.0" prefHeight="28.0" prefWidth="161.0" text="Passer une commande :" />
-      <ComboBox fx:id="fournisseur" layoutX="29.0" layoutY="111.0" prefWidth="150.0" />
-      <TableView fx:id="tableProduit" layoutX="36.0" layoutY="187.0" prefHeight="208.0" prefWidth="634.0" />
-      <Button fx:id="ajouterBoutton" layoutX="592.0" layoutY="425.0" mnemonicParsing="false" text="Ajouter" />
-      <Button layoutX="36.0" layoutY="425.0" mnemonicParsing="false" text="Retour" />
+      <ComboBox fx:id="fournisseurCombobox" layoutX="29.0" layoutY="111.0" onAction="#onClicked" prefWidth="150.0" />
+      <TableView fx:id="tableProduit" layoutX="31.0" layoutY="171.0" prefHeight="226.0" prefWidth="639.0">
+         <columns>
+            <TableColumn fx:id="fournisseur" prefWidth="136.79995346069336" text="Fournisseur" />
+            <TableColumn fx:id="produit" prefWidth="119.19996643066406" text="Produit" />
+            <TableColumn fx:id="prix" prefWidth="136.0" text="Prix" />
+            <TableColumn fx:id="quantite" prefWidth="120.79998779296875" text="Quantié" />
+            <TableColumn fx:id="prixFinal" prefWidth="129.5999755859375" text="Prix Final" />
+         </columns></TableView>
+      <Button fx:id="creerCommande" layoutX="561.0" layoutY="425.0" mnemonicParsing="false" text="Créer Commande" />
+      <Button layoutX="31.0" layoutY="425.0" mnemonicParsing="false" text="Retour" />
       <Label layoutX="48.0" layoutY="81.0" text="Fournisseur :" />
-      <Label layoutX="48.0" layoutY="159.0" text="Produit :" />
+      <Label layoutX="236.0" layoutY="81.0" text="Produit :" />
+      <ComboBox fx:id="produitCombobox" layoutX="236.0" layoutY="111.0" prefWidth="150.0" />
+      <Label layoutX="428.0" layoutY="81.0" text="Quantité : " />
+      <TextField fx:id="quantiteField" layoutX="428.0" layoutY="111.0" />
+      <Button fx:id="ajouterBoutton" layoutX="615.0" layoutY="111.0" mnemonicParsing="false" onAction="#ajouterButton" text="Ajouter" />
+      <TextField fx:id="prixTotal" editable="false" layoutX="258.0" layoutY="425.0" />
    </children>
 </Pane>

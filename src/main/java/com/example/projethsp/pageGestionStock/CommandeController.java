@@ -38,6 +38,8 @@ public class CommandeController implements Initializable {
     @FXML
     private TextField quantiteField;
 
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ArrayList<Fournisseur> list1 = fournisseurRepository.recupererFournisseur();
