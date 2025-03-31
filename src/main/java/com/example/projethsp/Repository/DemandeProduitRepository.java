@@ -36,7 +36,7 @@ public class DemandeProduitRepository {
         return liste;
     }
     public void ajouter(DemandeProduit demandeProduit) {
-        String sql2 = "SELECT * FROM demandeProduit WHERE d.ref_demande = ? and d.ref_produit = ?";
+        String sql2 = "SELECT * FROM demandeProduit WHERE ref_demande = ? and ref_produit = ?";
         String sql = "INSERT INTO demandeproduit (ref_demande,ref_produit,nb,valider) VALUES (?,?,?,?)";
         try {
             PreparedStatement requeteSelect = connection.prepareStatement(sql2);
