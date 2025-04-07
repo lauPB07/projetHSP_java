@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f9ebbc6f-9e1e-4f79-acfe-6ff704ebc164" name="Changes" comment="feat(PatientRepository):ajout en base de donnée dans la table fiche_patient de la ref_userPatient et ref_userCreer apres creation d'un user">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/DemandeProduitRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/DemandeProduitRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/ProduitRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/Repository/ProduitRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/pageMedecin/ListePatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/pageMedecin/ListePatientController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projethsp/pageMedecin/MesDemandeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projethsp/pageMedecin/MesDemandeController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -147,6 +148,10 @@
       <workItem from="1741094315211" duration="2499000" />
       <workItem from="1741177633722" duration="10065000" />
       <workItem from="1741250659073" duration="8743000" />
+      <workItem from="1743614491089" duration="8559000" />
+      <workItem from="1743874948017" duration="6627000" />
+      <workItem from="1743973298311" duration="806000" />
+      <workItem from="1744023856175" duration="2990000" />
     </task>
     <task id="LOCAL-00001" summary="feat(AcceuilController):creation de la methode onListeSelection">
       <option name="closed" value="true" />
