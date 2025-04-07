@@ -4,13 +4,10 @@ public class Commande {
 
     private int idCommande;
     private int nbProduit;
-    private int idUser;
+    private String fournisseur;
     private String nomUser;
     private String prenomUser;
-    private int idProduit;
     private float prixFinal;
-    private int idStatus;
-    private int idFournisseur;
 
     public int getIdCommande() {
         return idCommande;
@@ -28,12 +25,12 @@ public class Commande {
         this.nbProduit = nbProduit;
     }
 
-    public int getIdUser() {
-        return idUser;
+    public String getFournisseur() {
+        return fournisseur;
     }
 
-    public void setIdUser(int idUser) {
-        this.idUser = idUser;
+    public void setFournisseur(String fournisseur) {
+        this.fournisseur = fournisseur;
     }
 
     public String getNomUser() {
@@ -52,15 +49,6 @@ public class Commande {
         this.prenomUser = prenomUser;
     }
 
-    public int getIdProduit() {
-        return idProduit;
-    }
-
-    public void setIdProduit(int idProduit) {
-        this.idProduit = idProduit;
-    }
-
-
     public float getPrixFinal() {
         return prixFinal;
     }
@@ -69,54 +57,25 @@ public class Commande {
         this.prixFinal = prixFinal;
     }
 
-    public int getIdStatus() {
+    public String getIdStatus() {
         return idStatus;
     }
 
-    public void setIdStatus(int idStatus) {
+    public void setIdStatus(String idStatus) {
         this.idStatus = idStatus;
     }
 
-    public int getIdFournisseur() {
-        return idFournisseur;
-    }
-
-    public void setIdFournisseur(int idFournisseur) {
-        this.idFournisseur = idFournisseur;
-    }
-
-    public Boolean getValidate() {
-        return isValidate;
-    }
-
-    public void setValidate(Boolean validate) {
-        isValidate = validate;
-    }
-
-    public Commande(int idCommande, int nbProduit, int idUser, String nomUser, String prenomUser, int idProduit,float prixFinal, int idStatus, int idFournisseur, Boolean isValidate, String libelleProduit) {
+    public Commande(int idCommande, int nbProduit, String fournisseur, String nomUser, String prenomUser, float prixFinal, String idStatus) {
         this.idCommande = idCommande;
         this.nbProduit = nbProduit;
-        this.idUser = idUser;
+        this.fournisseur = fournisseur;
         this.nomUser = nomUser;
         this.prenomUser = prenomUser;
-        this.idProduit = idProduit;
         this.prixFinal = prixFinal;
         this.idStatus = idStatus;
-        this.idFournisseur = idFournisseur;
-        this.isValidate = isValidate;
-        this.libelleProduit = libelleProduit;
     }
 
-    private Boolean isValidate;
+    private String idStatus;
 
-    public String getLibelleProduit() {
-        return libelleProduit;
-    }
-
-    public void setLibelleProduit(String libelleProduit) {
-        this.libelleProduit = libelleProduit;
-    }
-
-    private String libelleProduit;
 
 }

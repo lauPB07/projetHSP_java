@@ -22,12 +22,12 @@ public class CommandeRepository {
 
     public ArrayList<Commande> getAllCommande(){
         ArrayList<Commande> liste = new ArrayList<>();
-        String sql = "SELECT * FROM commande3 ";
+        String sql = "SELECT * FROM vue_commandes ";
         try {
             PreparedStatement requetePrepare = connection.prepareStatement(sql);
             ResultSet resultatRequette = requetePrepare.executeQuery();
             while (resultatRequette.next()) {
-                liste.add(new Commande(resultatRequette.getInt("id_commande"),resultatRequette.getInt("nbProduit"),resultatRequette.getInt("ref_user"),resultatRequette.getString("nom"),resultatRequette.getString("prenom"),resultatRequette.getInt("ref_produit"),resultatRequette.getFloat("prixFinal"),resultatRequette.getInt("ref_Status"),resultatRequette.getInt("ref_fournisseur"),resultatRequette.getBoolean("isValidate"),resultatRequette.getString("libelle")));            }
+                liste.add(new Commande(resultatRequette.getInt("ref_commande"),resultatRequette.getInt("nbProduit"),resultatRequette.getString("fournisseur"),resultatRequette.getString("nom_demandeur"),resultatRequette.getString("prenom_demandeur"),resultatRequette.getFloat("prixFinal"),resultatRequette.getString("status")));            }
 
 
         } catch (SQLException e) {
